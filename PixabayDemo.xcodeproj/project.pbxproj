@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6BA1514523119F2E00F3B6AA /* HeaderKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512823119F2E00F3B6AA /* HeaderKey.swift */; };
+		6BA1514623119F2E00F3B6AA /* ParametersEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512923119F2E00F3B6AA /* ParametersEncoding.swift */; };
+		6BA1514723119F2E00F3B6AA /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512A23119F2E00F3B6AA /* NetworkTask.swift */; };
+		6BA1514823119F2E00F3B6AA /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512B23119F2E00F3B6AA /* HTTPMethod.swift */; };
+		6BA1514923119F2E00F3B6AA /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512C23119F2E00F3B6AA /* NetworkError.swift */; };
+		6BA1514A23119F2E00F3B6AA /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512E23119F2E00F3B6AA /* URLSessionProvider.swift */; };
+		6BA1514B23119F2E00F3B6AA /* URLComponentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1513023119F2E00F3B6AA /* URLComponentsExtension.swift */; };
+		6BA1514C23119F2E00F3B6AA /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1513123119F2E00F3B6AA /* DataExtension.swift */; };
+		6BA1514D23119F2E00F3B6AA /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1513223119F2E00F3B6AA /* URLRequestExtension.swift */; };
+		6BA1515323119F2E00F3B6AA /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1513A23119F2E00F3B6AA /* ServiceProtocol.swift */; };
+		6BA1515423119F2E00F3B6AA /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1513B23119F2E00F3B6AA /* URLSessionProtocol.swift */; };
+		6BA1515523119F2E00F3B6AA /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1513C23119F2E00F3B6AA /* ProviderProtocol.swift */; };
+		6BA1515E2311B95A00F3B6AA /* PixabayServiceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1515D2311B95A00F3B6AA /* PixabayServiceWorker.swift */; };
+		6BA151602311BA7B00F3B6AA /* PixabayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1515F2311BA7B00F3B6AA /* PixabayService.swift */; };
+		6BA151622311C17A00F3B6AA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA151612311C17A00F3B6AA /* BaseViewController.swift */; };
 		6BB3D507231188D4002167FE /* PixabayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3D506231188D4002167FE /* PixabayItem.swift */; };
 		6BB3D50923118932002167FE /* PixabaySearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3D50823118932002167FE /* PixabaySearchResult.swift */; };
 		6BB43F7523114217006F84CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB43F7423114217006F84CE /* AppDelegate.swift */; };
@@ -17,6 +32,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6BA1512823119F2E00F3B6AA /* HeaderKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderKey.swift; sourceTree = "<group>"; };
+		6BA1512923119F2E00F3B6AA /* ParametersEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametersEncoding.swift; sourceTree = "<group>"; };
+		6BA1512A23119F2E00F3B6AA /* NetworkTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
+		6BA1512B23119F2E00F3B6AA /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		6BA1512C23119F2E00F3B6AA /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		6BA1512E23119F2E00F3B6AA /* URLSessionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
+		6BA1513023119F2E00F3B6AA /* URLComponentsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLComponentsExtension.swift; sourceTree = "<group>"; };
+		6BA1513123119F2E00F3B6AA /* DataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		6BA1513223119F2E00F3B6AA /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
+		6BA1513A23119F2E00F3B6AA /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		6BA1513B23119F2E00F3B6AA /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		6BA1513C23119F2E00F3B6AA /* ProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
+		6BA1515D2311B95A00F3B6AA /* PixabayServiceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayServiceWorker.swift; sourceTree = "<group>"; };
+		6BA1515F2311BA7B00F3B6AA /* PixabayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayService.swift; sourceTree = "<group>"; };
+		6BA151612311C17A00F3B6AA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6BB3D506231188D4002167FE /* PixabayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayItem.swift; sourceTree = "<group>"; };
 		6BB3D50823118932002167FE /* PixabaySearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabaySearchResult.swift; sourceTree = "<group>"; };
 		6BB43F7123114217006F84CE /* PixabayDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixabayDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				6BB43F7823114217006F84CE /* Main.storyboard */,
+				6BA151612311C17A00F3B6AA /* BaseViewController.swift */,
 				6BB43F7623114217006F84CE /* ViewController.swift */,
 			);
 			path = Modules;
@@ -61,6 +92,75 @@
 				6BB43F7D23114218006F84CE /* LaunchScreen.storyboard */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		6BA1512623119F2E00F3B6AA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6BA1512723119F2E00F3B6AA /* Enums */,
+				6BA1512D23119F2E00F3B6AA /* Provider */,
+				6BA1512F23119F2E00F3B6AA /* Extensions */,
+				6BA1513923119F2E00F3B6AA /* Protocols */,
+				6BA1513D23119F2E00F3B6AA /* Services */,
+				6BA1513323119F2E00F3B6AA /* Workers */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6BA1512723119F2E00F3B6AA /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				6BA1512823119F2E00F3B6AA /* HeaderKey.swift */,
+				6BA1512923119F2E00F3B6AA /* ParametersEncoding.swift */,
+				6BA1512A23119F2E00F3B6AA /* NetworkTask.swift */,
+				6BA1512B23119F2E00F3B6AA /* HTTPMethod.swift */,
+				6BA1512C23119F2E00F3B6AA /* NetworkError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		6BA1512D23119F2E00F3B6AA /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				6BA1512E23119F2E00F3B6AA /* URLSessionProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		6BA1512F23119F2E00F3B6AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6BA1513023119F2E00F3B6AA /* URLComponentsExtension.swift */,
+				6BA1513123119F2E00F3B6AA /* DataExtension.swift */,
+				6BA1513223119F2E00F3B6AA /* URLRequestExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6BA1513323119F2E00F3B6AA /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				6BA1515D2311B95A00F3B6AA /* PixabayServiceWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		6BA1513923119F2E00F3B6AA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6BA1513A23119F2E00F3B6AA /* ServiceProtocol.swift */,
+				6BA1513B23119F2E00F3B6AA /* URLSessionProtocol.swift */,
+				6BA1513C23119F2E00F3B6AA /* ProviderProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6BA1513D23119F2E00F3B6AA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6BA1515F2311BA7B00F3B6AA /* PixabayService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		6BB3D505231188A5002167FE /* Models */ = {
@@ -95,6 +195,7 @@
 				6BB43F7423114217006F84CE /* AppDelegate.swift */,
 				6BB3D505231188A5002167FE /* Models */,
 				6BA1512423119D9E00F3B6AA /* Modules */,
+				6BA1512623119F2E00F3B6AA /* Networking */,
 				6BA1512323119D8900F3B6AA /* Helpers */,
 				6BA1512523119DB400F3B6AA /* Other */,
 				6BB43F7B23114218006F84CE /* Assets.xcassets */,
@@ -173,10 +274,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BA1515423119F2E00F3B6AA /* URLSessionProtocol.swift in Sources */,
 				6BB43F7723114217006F84CE /* ViewController.swift in Sources */,
+				6BA1514C23119F2E00F3B6AA /* DataExtension.swift in Sources */,
+				6BA1515323119F2E00F3B6AA /* ServiceProtocol.swift in Sources */,
+				6BA151622311C17A00F3B6AA /* BaseViewController.swift in Sources */,
+				6BA1514A23119F2E00F3B6AA /* URLSessionProvider.swift in Sources */,
+				6BA1515E2311B95A00F3B6AA /* PixabayServiceWorker.swift in Sources */,
 				6BB3D507231188D4002167FE /* PixabayItem.swift in Sources */,
+				6BA1514723119F2E00F3B6AA /* NetworkTask.swift in Sources */,
 				6BB43F7523114217006F84CE /* AppDelegate.swift in Sources */,
+				6BA1514823119F2E00F3B6AA /* HTTPMethod.swift in Sources */,
+				6BA1514D23119F2E00F3B6AA /* URLRequestExtension.swift in Sources */,
 				6BB3D50923118932002167FE /* PixabaySearchResult.swift in Sources */,
+				6BA1514923119F2E00F3B6AA /* NetworkError.swift in Sources */,
+				6BA1514623119F2E00F3B6AA /* ParametersEncoding.swift in Sources */,
+				6BA1514523119F2E00F3B6AA /* HeaderKey.swift in Sources */,
+				6BA151602311BA7B00F3B6AA /* PixabayService.swift in Sources */,
+				6BA1514B23119F2E00F3B6AA /* URLComponentsExtension.swift in Sources */,
+				6BA1515523119F2E00F3B6AA /* ProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
