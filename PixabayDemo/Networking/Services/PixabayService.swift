@@ -11,15 +11,14 @@ import Foundation
 enum PixabayService: ServiceProtocol {
     case getPictureListWith(searchTerm: String)
     
+    case getTopPopularPictures(category: ApiParameters.Category)
+    
     var baseURL: URL {
         return URL(string: "https://pixabay.com")!
     }
     
     var path: String {
-        switch self {
-        case .getPictureListWith:
-            return "api/"
-        }
+        return "api/"
     }
     
     var method: HTTPMethod {
@@ -27,16 +26,23 @@ enum PixabayService: ServiceProtocol {
     }
     
     var task: NetworkTask {
+        var parameters: NetworkParameters = [
+            "key": "9485555-ef481e6738821b2b89a42b79c",
+            "image_type": "photo",
+        ]
+        
         switch self {
         case .getPictureListWith(let searchTerm):
-            let parameters: NetworkParameters = [
-                "key": "9485555-ef481e6738821b2b89a42b79c",
-                "image_type": "photo",
-                "per_page": 100,
-                "g": searchTerm
-            ]
-            return .requestParameters(parameters)
+            parameters["per_page"] = 100
+            parameters["q"] = searchTerm
+            
+        case .getTopPopularPictures(let category):
+            parameters["per_page"] = 100
+            parameters["lang"] = "en"
+            parameters["q"] = category.rawValue
         }
+        
+        return .requestParameters(parameters)
     }
     
     var headers: Headers? {
@@ -45,8 +51,6 @@ enum PixabayService: ServiceProtocol {
     }
     
     var parametersEncoding: ParametersEncoding {
-        switch self {
-        case .getPictureListWith: return .url
-        }
+        return .url
     }
 }

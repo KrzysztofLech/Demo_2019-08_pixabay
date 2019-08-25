@@ -46,7 +46,7 @@ class CollectionScreenViewController: BaseViewController {
     private func printItemData() {
         print(self.pixabayImageItems.count)
         pixabayImageItems.forEach {
-            print($0.user)
+            print($0.pageURL)
         }
     }
 }

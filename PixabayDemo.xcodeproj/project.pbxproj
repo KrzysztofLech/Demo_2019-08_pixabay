@@ -26,6 +26,7 @@
 		6BA151682312613900F3B6AA /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA151672312613900F3B6AA /* SplashScreenViewController.swift */; };
 		6BA1516A23126ADD00F3B6AA /* CollectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1516923126ADD00F3B6AA /* CollectionScreenViewController.swift */; };
 		6BA1516C23126B0C00F3B6AA /* CollectionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA1516B23126B0C00F3B6AA /* CollectionScreen.storyboard */; };
+		6BA1516F231271A300F3B6AA /* PixabayApiParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1516E231271A300F3B6AA /* PixabayApiParameters.swift */; };
 		6BB3D507231188D4002167FE /* PixabayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3D506231188D4002167FE /* PixabayItem.swift */; };
 		6BB3D50923118932002167FE /* PixabaySearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3D50823118932002167FE /* PixabaySearchResult.swift */; };
 		6BB43F7523114217006F84CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB43F7423114217006F84CE /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 		6BA151672312613900F3B6AA /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		6BA1516923126ADD00F3B6AA /* CollectionScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenViewController.swift; sourceTree = "<group>"; };
 		6BA1516B23126B0C00F3B6AA /* CollectionScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionScreen.storyboard; sourceTree = "<group>"; };
+		6BA1516E231271A300F3B6AA /* PixabayApiParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayApiParameters.swift; sourceTree = "<group>"; };
 		6BB3D506231188D4002167FE /* PixabayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayItem.swift; sourceTree = "<group>"; };
 		6BB3D50823118932002167FE /* PixabaySearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabaySearchResult.swift; sourceTree = "<group>"; };
 		6BB43F7123114217006F84CE /* PixabayDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixabayDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 				6BA1512A23119F2E00F3B6AA /* NetworkTask.swift */,
 				6BA1512B23119F2E00F3B6AA /* HTTPMethod.swift */,
 				6BA1512C23119F2E00F3B6AA /* NetworkError.swift */,
+				6BA1516E231271A300F3B6AA /* PixabayApiParameters.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				6BA151602311BA7B00F3B6AA /* PixabayService.swift in Sources */,
 				6BA1514B23119F2E00F3B6AA /* URLComponentsExtension.swift in Sources */,
 				6BA151682312613900F3B6AA /* SplashScreenViewController.swift in Sources */,
+				6BA1516F231271A300F3B6AA /* PixabayApiParameters.swift in Sources */,
 				6BA1515523119F2E00F3B6AA /* ProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
