@@ -10,6 +10,7 @@ import Foundation
 
 protocol PixabayServiceWorkerProtocol: AnyObject {
     func getPictureListWith(searchTerm text: String, completion: @escaping (Result<PixabayImageSearchResult, NetworkError>) -> Void)
+    func getTopPopularPicturesFrom(category: ApiParameters.Category, completion: @escaping (Result<PixabayImageSearchResult, NetworkError>) -> Void)
 }
 
 final class PixabayServiceWorker: PixabayServiceWorkerProtocol {
@@ -22,6 +23,11 @@ final class PixabayServiceWorker: PixabayServiceWorkerProtocol {
     
     func getPictureListWith(searchTerm text: String, completion: @escaping (Result<PixabayImageSearchResult, NetworkError>) -> Void) {
         let service = PixabayService.getPictureListWith(searchTerm: text)
+        provider.request(type: PixabayImageSearchResult.self, service: service, completion: completion)
+    }
+    
+    func getTopPopularPicturesFrom(category: ApiParameters.Category, completion: @escaping (Result<PixabayImageSearchResult, NetworkError>) -> Void) {
+        let service = PixabayService.getTopPopularPictures(category: category)
         provider.request(type: PixabayImageSearchResult.self, service: service, completion: completion)
     }
 }

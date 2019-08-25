@@ -37,7 +37,7 @@ enum PixabayService: ServiceProtocol {
             parameters["q"] = searchTerm
             
         case .getTopPopularPictures(let category):
-            parameters["per_page"] = 100
+            parameters["per_page"] = 200
             parameters["lang"] = "en"
             parameters["q"] = category.rawValue
         }

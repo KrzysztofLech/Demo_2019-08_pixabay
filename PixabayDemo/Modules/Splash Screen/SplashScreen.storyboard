@@ -26,7 +26,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="duO-Co-Dam" kind="show" id="4xU-k8-yxV"/>
+                                    <segue destination="duO-Co-Dam" kind="show" identifier="CollectionScreen" id="4xU-k8-yxV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -37,6 +37,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x7A-Q7-l0v"/>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="Eev-Aa-U1O" id="Uie-o1-roj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jo8-A3-HNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

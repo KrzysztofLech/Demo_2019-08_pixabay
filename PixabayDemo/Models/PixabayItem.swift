@@ -6,8 +6,6 @@
 //  Copyright © 2019 Krzysztof Lech. All rights reserved.
 //
 
-import Foundation
-
 struct PixabayImageItem: Decodable {
     
     let id: Int
