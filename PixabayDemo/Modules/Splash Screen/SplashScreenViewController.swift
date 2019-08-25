@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SplashScreenViewController: BaseViewController {
+final class SplashScreenViewController: BaseViewController {
     
     private enum Constants {
         static let collectionScreenIdentifier = "CollectionScreen"
@@ -25,24 +25,30 @@ class SplashScreenViewController: BaseViewController {
     
     private func fetchData() {
         showLoader()
-        controller.fetchData(progressHandler: { [weak self] progress in
-            switch progress {
-            case .error(let error):
-                self?.hideLoader()
-                self?.showLoaderError(withMessage: error.message)
-                
-            case .progress(let progressValue):
-                print("Progress: ", progressValue)
-                
-            case .finish:
-                self?.hideLoader()
-                self?.showCollectionScreen()
-                print("Finish!")
+        controller.fetchData { [weak self] error in
+            if let errorMessage = error?.message {
+                self?.showLoaderError(withMessage: errorMessage)
+            } else {
+                print("Data downloaded!")       ///
+                self?.downloadImages()
             }
-        })
+        }
+    }
+    
+    private func downloadImages() {
+        controller.downloadCollectionImages { [weak self] error in
+            if let errorMessage = error?.message {
+                self?.showLoaderError(withMessage: errorMessage)
+            } else {
+                print("Images downloaded!")     ///
+                self?.showCollectionScreen()
+            }
+        }
     }
     
     private func showCollectionScreen() {
+        print("images: ", controller.images.count)
+        hideLoader()
         performSegue(withIdentifier: Constants.collectionScreenIdentifier, sender: nil)
     }
 }

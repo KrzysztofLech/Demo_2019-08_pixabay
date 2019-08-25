@@ -10,7 +10,6 @@ import Foundation
 
 enum PixabayService: ServiceProtocol {
     case getPictureListWith(searchTerm: String)
-    
     case getTopPopularPictures(category: ApiParameters.Category)
     
     var baseURL: URL {

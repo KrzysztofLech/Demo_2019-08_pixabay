@@ -21,7 +21,7 @@ struct ApiParameters {
     }
     
     enum Category: String {
-        case greece = "greece+sea"
+        case greece
         case food
         case people
         case computer

@@ -7,6 +7,7 @@ enum NetworkError: Error {
     case unknown(Error?)
     case noJSONData
     case parseJSON(Error)
+    case urlProblem
     
     var message: String {
         switch self {
@@ -19,6 +20,9 @@ enum NetworkError: Error {
         case let .parseJSON(error):
             print("Parse JSON error: ", error.localizedDescription)
             return "Data parsing error!"
+            
+        case .urlProblem:
+            return "URL creating problem"
         }
     }
 }

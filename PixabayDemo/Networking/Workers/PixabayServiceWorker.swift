@@ -6,11 +6,12 @@
 //  Copyright © 2019 Krzysztof Lech. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol PixabayServiceWorkerProtocol: AnyObject {
     func getPictureListWith(searchTerm text: String, completion: @escaping (Result<PixabayImageSearchResult, NetworkError>) -> Void)
     func getTopPopularPicturesFrom(category: ApiParameters.Category, completion: @escaping (Result<PixabayImageSearchResult, NetworkError>) -> Void)
+    func downloadImage(url: String, completion: @escaping (Result<UIImage?, NetworkError>)->())
 }
 
 final class PixabayServiceWorker: PixabayServiceWorkerProtocol {
@@ -29,5 +30,9 @@ final class PixabayServiceWorker: PixabayServiceWorkerProtocol {
     func getTopPopularPicturesFrom(category: ApiParameters.Category, completion: @escaping (Result<PixabayImageSearchResult, NetworkError>) -> Void) {
         let service = PixabayService.getTopPopularPictures(category: category)
         provider.request(type: PixabayImageSearchResult.self, service: service, completion: completion)
+    }
+    
+    func downloadImage(url: String, completion: @escaping (Result<UIImage?, NetworkError>)->()) {
+        provider.downloadImage(url: url, completion: completion)
     }
 }
