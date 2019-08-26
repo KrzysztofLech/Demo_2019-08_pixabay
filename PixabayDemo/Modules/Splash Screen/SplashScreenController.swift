@@ -35,7 +35,9 @@ final class SplashScreenController {
     
     private var progress: Float = 0 {
         didSet {
-            delegate?.progressChanged(currentProgress: progress)
+            DispatchQueue.main.async {
+                self.delegate?.progressChanged(currentProgress: self.progress)
+            }
         }
     }
     

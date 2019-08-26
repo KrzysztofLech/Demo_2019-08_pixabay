@@ -18,37 +18,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eev-Aa-U1O">
-                                <rect key="frame" x="107" y="408" width="200" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Tct-Pa-Npf"/>
-                                    <constraint firstAttribute="width" constant="200" id="pzT-6g-wXa"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="duO-Co-Dam" kind="show" identifier="CollectionScreen" id="4xU-k8-yxV"/>
-                                </connections>
-                            </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4VS-9P-cgQ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ApB-7e-kff" customClass="DownloadingProgressView" customModule="PixabayDemo" customModuleProvider="target">
                                 <rect key="frame" x="16" y="730" width="382" height="6"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4VS-9P-cgQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="6"/>
+                                        <color key="progressTintColor" red="0.99888390299999996" green="0.0022462564159999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </progressView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="6" id="Xba-oe-ZUt"/>
+                                    <constraint firstAttribute="height" constant="6" id="Ic9-Hw-7mq"/>
+                                    <constraint firstItem="4VS-9P-cgQ" firstAttribute="leading" secondItem="ApB-7e-kff" secondAttribute="leading" id="Nmz-LX-dAq"/>
+                                    <constraint firstAttribute="trailing" secondItem="4VS-9P-cgQ" secondAttribute="trailing" id="XsA-Sh-2yk"/>
+                                    <constraint firstAttribute="bottom" secondItem="4VS-9P-cgQ" secondAttribute="bottom" id="m7Q-6A-UWB"/>
+                                    <constraint firstItem="4VS-9P-cgQ" firstAttribute="top" secondItem="ApB-7e-kff" secondAttribute="top" id="pEX-u6-3I4"/>
                                 </constraints>
-                            </progressView>
+                                <connections>
+                                    <outlet property="progressView" destination="4VS-9P-cgQ" id="Dck-Ca-Oak"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="4VS-9P-cgQ" secondAttribute="trailing" constant="16" id="0l5-nH-VS7"/>
-                            <constraint firstItem="4VS-9P-cgQ" firstAttribute="leading" secondItem="wvQ-7J-vLS" secondAttribute="leading" constant="16" id="CSw-Pi-YLo"/>
-                            <constraint firstItem="Eev-Aa-U1O" firstAttribute="centerX" secondItem="wvQ-7J-vLS" secondAttribute="centerX" id="PlZ-yN-uTY"/>
-                            <constraint firstItem="Eev-Aa-U1O" firstAttribute="centerY" secondItem="wvQ-7J-vLS" secondAttribute="centerY" id="T9O-ax-r6y"/>
-                            <constraint firstAttribute="bottom" secondItem="4VS-9P-cgQ" secondAttribute="bottom" constant="160" id="rf0-sQ-Suh"/>
+                            <constraint firstItem="ApB-7e-kff" firstAttribute="leading" secondItem="x7A-Q7-l0v" secondAttribute="leading" constant="16" id="Ab7-cC-mJA"/>
+                            <constraint firstAttribute="bottom" secondItem="ApB-7e-kff" secondAttribute="bottom" constant="160" id="MsC-Hl-ILN"/>
+                            <constraint firstItem="x7A-Q7-l0v" firstAttribute="trailing" secondItem="ApB-7e-kff" secondAttribute="trailing" constant="16" id="iFX-dn-UVu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x7A-Q7-l0v"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="Eev-Aa-U1O" id="Uie-o1-roj"/>
-                        <outlet property="progressView" destination="4VS-9P-cgQ" id="5YQ-ow-rcr"/>
+                        <outlet property="downloadingProgressView" destination="ApB-7e-kff" id="ioX-ZL-Gnl"/>
+                        <segue destination="duO-Co-Dam" kind="show" identifier="CollectionScreen" id="DMu-XT-Wic"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jo8-A3-HNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
