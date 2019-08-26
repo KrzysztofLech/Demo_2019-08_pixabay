@@ -41,8 +41,6 @@ final class SplashScreenController {
         }
     }
     
-    var images: [UIImage] = []      /// wykasować
-    
     init() {
         serviceWorker = PixabayServiceWorker()
     }
@@ -83,14 +81,14 @@ final class SplashScreenController {
         
         let dispatchGroup = DispatchGroup()
         
-        allImages.forEach { [weak self] in
+        allImages.forEach { [weak self] item in
             guard let self = self else { return }
             dispatchGroup.enter()
             
-            serviceWorker?.downloadImage(url: $0.largeImageURL) { result in
+            serviceWorker?.downloadImage(url: item.largeImageURL) { result in
                 switch result {
                 case .success(let image):
-                    self.images.append(image!)
+                    ImageCacheService.shared.cache(object: image, forKey: item.id)
                     
                 case .failure(let error):
                     DispatchQueue.main.async { completion(error) }

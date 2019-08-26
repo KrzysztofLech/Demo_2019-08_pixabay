@@ -11,7 +11,7 @@ import UIKit
 protocol PixabayServiceWorkerProtocol: AnyObject {
     func getPictureListWith(searchTerm text: String, completion: @escaping (Result<PixabayImageSearchResult, NetworkError>) -> Void)
     func getTopPopularPicturesFrom(category: ApiParameters.Category, completion: @escaping (Result<PixabayImageSearchResult, NetworkError>) -> Void)
-    func downloadImage(url: String, completion: @escaping (Result<UIImage?, NetworkError>)->())
+    func downloadImage(url: String, completion: @escaping (Result<UIImage, NetworkError>)->())
 }
 
 final class PixabayServiceWorker: PixabayServiceWorkerProtocol {
@@ -32,7 +32,7 @@ final class PixabayServiceWorker: PixabayServiceWorkerProtocol {
         provider.request(type: PixabayImageSearchResult.self, service: service, completion: completion)
     }
     
-    func downloadImage(url: String, completion: @escaping (Result<UIImage?, NetworkError>)->()) {
+    func downloadImage(url: String, completion: @escaping (Result<UIImage, NetworkError>)->()) {
         provider.downloadImage(url: url, completion: completion)
     }
 }

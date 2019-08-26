@@ -30,7 +30,7 @@ final class URLSessionProvider: ProviderProtocol {
         task.resume()
     }
     
-    func downloadImage(url: String, completion: @escaping (Result<UIImage?, NetworkError>) -> Void) {
+    func downloadImage(url: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.urlProblem))
             return
@@ -83,13 +83,12 @@ final class URLSessionProvider: ProviderProtocol {
         }
     }
 
-    private func handleResponseStatus(data: Data?, response: HTTPURLResponse?, error: Error?, completion: (Result<UIImage?, NetworkError>) -> Void) {
+    private func handleResponseStatus(data: Data?, response: HTTPURLResponse?, error: Error?, completion: (Result<UIImage, NetworkError>) -> Void) {
         guard error == nil else { return completion(.failure(.unknown(error))) }
         guard let response = response else { return completion(.failure(.unknown(nil))) }
         switch response.statusCode {
         case 200 ... 299:
-            guard let data = data else { return completion(.failure(.unknown(nil))) }
-            let image = UIImage(data: data)
+            guard let data = data, let image = UIImage(data: data) else { return completion(.failure(.unknown(nil))) }
             completion(.success(image))
         default:
             completion(.failure(.unknown(nil)))

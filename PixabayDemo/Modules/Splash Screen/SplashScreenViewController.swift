@@ -49,7 +49,6 @@ final class SplashScreenViewController: BaseViewController {
     }
     
     private func showCollectionScreen() {
-        print("images: ", controller.images.count)
         hideLoader()
         performSegue(withIdentifier: Constants.collectionScreenIdentifier, sender: nil)
     }
