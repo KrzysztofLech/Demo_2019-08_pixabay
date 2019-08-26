@@ -29,16 +29,26 @@
                                     <segue destination="duO-Co-Dam" kind="show" identifier="CollectionScreen" id="4xU-k8-yxV"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4VS-9P-cgQ">
+                                <rect key="frame" x="16" y="730" width="382" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="Xba-oe-ZUt"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4VS-9P-cgQ" secondAttribute="trailing" constant="16" id="0l5-nH-VS7"/>
+                            <constraint firstItem="4VS-9P-cgQ" firstAttribute="leading" secondItem="wvQ-7J-vLS" secondAttribute="leading" constant="16" id="CSw-Pi-YLo"/>
                             <constraint firstItem="Eev-Aa-U1O" firstAttribute="centerX" secondItem="wvQ-7J-vLS" secondAttribute="centerX" id="PlZ-yN-uTY"/>
                             <constraint firstItem="Eev-Aa-U1O" firstAttribute="centerY" secondItem="wvQ-7J-vLS" secondAttribute="centerY" id="T9O-ax-r6y"/>
+                            <constraint firstAttribute="bottom" secondItem="4VS-9P-cgQ" secondAttribute="bottom" constant="160" id="rf0-sQ-Suh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x7A-Q7-l0v"/>
                     </view>
                     <connections>
                         <outlet property="button" destination="Eev-Aa-U1O" id="Uie-o1-roj"/>
+                        <outlet property="progressView" destination="4VS-9P-cgQ" id="5YQ-ow-rcr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jo8-A3-HNY" userLabel="First Responder" sceneMemberID="firstResponder"/>

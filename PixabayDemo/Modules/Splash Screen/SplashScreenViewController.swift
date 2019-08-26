@@ -15,11 +15,14 @@ final class SplashScreenViewController: BaseViewController {
     }
     
     @IBOutlet private var button: UIButton!
+    @IBOutlet var progressView: UIProgressView!
+    
     private let controller = SplashScreenController()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        controller.delegate = self
         fetchData()
     }
     
@@ -50,5 +53,13 @@ final class SplashScreenViewController: BaseViewController {
         print("images: ", controller.images.count)
         hideLoader()
         performSegue(withIdentifier: Constants.collectionScreenIdentifier, sender: nil)
+    }
+}
+
+extension SplashScreenViewController: ProgressViewDelegate {
+    func progressChanged(currentProgress: Float) {
+        DispatchQueue.main.async { [weak self] in
+            self?.progressView.setProgress(currentProgress, animated: true)
+        }
     }
 }
