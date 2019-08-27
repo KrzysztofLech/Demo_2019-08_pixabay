@@ -15,7 +15,7 @@ protocol ProgressViewDelegate: AnyObject {
 final class SplashScreenController {
     
     private enum Constants {
-        static let topViewedPhotosNumber: Int = 10
+        static let topViewedPhotosNumber: Int = 4
     }
     
     private var serviceWorker: PixabayServiceWorkerProtocol?
@@ -54,7 +54,7 @@ final class SplashScreenController {
             serviceWorker?.getTopPopularPicturesFrom(category: category) { response in
                 switch response {
                 case .success(let data):
-                    let tenMostViewedPictures = self?.findTenMostViewedPictures(items: data.items) ?? []
+                    let tenMostViewedPictures = self?.findMostViewedPictures(items: data.items) ?? []
                     let collection = PictureCollection(name: category.rawValue.capitalized,
                                                        items: tenMostViewedPictures)
                     self?.collections.append(collection)
@@ -71,7 +71,7 @@ final class SplashScreenController {
         dispatchGroup.notify(queue: .main) { completion(nil) }
     }
     
-    private func findTenMostViewedPictures(items: [PixabayImageItem]) -> [PixabayImageItem] {
+    private func findMostViewedPictures(items: [PixabayImageItem]) -> [PixabayImageItem] {
         let sortedArray = items.sorted { $0.views > $1.views }
         return Array(sortedArray.prefix(Constants.topViewedPhotosNumber))
     }

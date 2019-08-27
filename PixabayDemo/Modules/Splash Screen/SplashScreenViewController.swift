@@ -23,6 +23,7 @@ final class SplashScreenViewController: BaseViewController {
         
         controller.delegate = downloadingProgressView
         fetchData()
+        ///showCollectionScreen()
     }
     
     private func fetchData() {
@@ -51,5 +52,14 @@ final class SplashScreenViewController: BaseViewController {
     private func showCollectionScreen() {
         hideLoader()
         performSegue(withIdentifier: Constants.collectionScreenIdentifier, sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let navigationController = segue.destination as? UINavigationController,
+            let viewController = navigationController.topViewController as? CollectionScreenViewController
+            else { return }
+        
+        viewController.collections = controller.collections
     }
 }

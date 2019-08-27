@@ -15,12 +15,38 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="q0P-ND-NPB" customClass="CollectionScreenViewController" customModule="PixabayDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="png-vC-m9C">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ua7-mj-iWb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a8b-vf-v9m">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="q0P-ND-NPB" id="Lja-aO-DZA"/>
+                                    <outlet property="delegate" destination="q0P-ND-NPB" id="zbO-99-sWJ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ua7-mj-iWb" secondAttribute="bottom" id="087-s4-uRE"/>
+                            <constraint firstAttribute="trailing" secondItem="ua7-mj-iWb" secondAttribute="trailing" id="kOW-ZY-a73"/>
+                            <constraint firstItem="ua7-mj-iWb" firstAttribute="leading" secondItem="png-vC-m9C" secondAttribute="leading" id="mew-8w-fZg"/>
+                            <constraint firstItem="ua7-mj-iWb" firstAttribute="top" secondItem="png-vC-m9C" secondAttribute="top" id="w9X-zj-wqh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JQX-xR-XZ7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pixabay Photos" id="5Zw-DE-hes"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ua7-mj-iWb" id="F35-u2-cRu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ib8-9d-4Jm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -29,15 +55,20 @@
         <!--Navigation Controller-->
         <scene sceneID="nUh-9s-d6D">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" toolbarHidden="NO" id="bha-VS-Fet" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="bha-VS-Fet" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="mTv-td-OaA">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="CvF-3o-Zk1">
-                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>

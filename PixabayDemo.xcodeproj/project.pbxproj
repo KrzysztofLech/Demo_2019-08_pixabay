@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		6B36D1B0231431C200230D74 /* DownloadingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1AF231431C200230D74 /* DownloadingProgressView.swift */; };
 		6B36D1B423143D3600230D74 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1B323143D3600230D74 /* ImageCacheService.swift */; };
+		6B36D1B623144B2900230D74 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1B523144B2900230D74 /* UIViewController+extensions.swift */; };
+		6B36D1B823144B4A00230D74 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1B723144B4A00230D74 /* UIView+extensions.swift */; };
+		6B36D1BE2314726B00230D74 /* BigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1BC2314726B00230D74 /* BigCell.swift */; };
+		6B36D1BF2314726B00230D74 /* BigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B36D1BD2314726B00230D74 /* BigCell.xib */; };
 		6BA1514523119F2E00F3B6AA /* HeaderKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512823119F2E00F3B6AA /* HeaderKey.swift */; };
 		6BA1514623119F2E00F3B6AA /* ParametersEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512923119F2E00F3B6AA /* ParametersEncoding.swift */; };
 		6BA1514723119F2E00F3B6AA /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512A23119F2E00F3B6AA /* NetworkTask.swift */; };
@@ -36,11 +40,17 @@
 		6BB43F7523114217006F84CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB43F7423114217006F84CE /* AppDelegate.swift */; };
 		6BB43F7C23114218006F84CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BB43F7B23114218006F84CE /* Assets.xcassets */; };
 		6BB43F7F23114218006F84CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB43F7D23114218006F84CE /* LaunchScreen.storyboard */; };
+		6BEE606D2315BC96000C61ED /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE606B2315BC96000C61ED /* CollectionCell.swift */; };
+		6BEE606E2315BC96000C61ED /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BEE606C2315BC96000C61ED /* CollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6B36D1AF231431C200230D74 /* DownloadingProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadingProgressView.swift; sourceTree = "<group>"; };
 		6B36D1B323143D3600230D74 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		6B36D1B523144B2900230D74 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
+		6B36D1B723144B4A00230D74 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		6B36D1BC2314726B00230D74 /* BigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCell.swift; sourceTree = "<group>"; };
+		6B36D1BD2314726B00230D74 /* BigCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigCell.xib; sourceTree = "<group>"; };
 		6BA1512823119F2E00F3B6AA /* HeaderKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderKey.swift; sourceTree = "<group>"; };
 		6BA1512923119F2E00F3B6AA /* ParametersEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametersEncoding.swift; sourceTree = "<group>"; };
 		6BA1512A23119F2E00F3B6AA /* NetworkTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
@@ -70,6 +80,8 @@
 		6BB43F7B23114218006F84CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BB43F7E23114218006F84CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BB43F8023114218006F84CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BEE606B2315BC96000C61ED /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		6BEE606C2315BC96000C61ED /* CollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +120,31 @@
 			path = "Image Cache";
 			sourceTree = "<group>";
 		};
+		6B36D1B923144B7900230D74 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B36D1B523144B2900230D74 /* UIViewController+extensions.swift */,
+				6B36D1B723144B4A00230D74 /* UIView+extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6B36D1BB2314716200230D74 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6BEE606B2315BC96000C61ED /* CollectionCell.swift */,
+				6BEE606C2315BC96000C61ED /* CollectionCell.xib */,
+				6B36D1BC2314726B00230D74 /* BigCell.swift */,
+				6B36D1BD2314726B00230D74 /* BigCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		6BA1512323119D8900F3B6AA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6B36D1AE2314319C00230D74 /* Views */,
+				6B36D1B923144B7900230D74 /* Extensions */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -128,7 +162,6 @@
 		6BA1512523119DB400F3B6AA /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				6B36D1AE2314319C00230D74 /* Views */,
 				6BB43F7D23114218006F84CE /* LaunchScreen.storyboard */,
 			);
 			path = Other;
@@ -217,6 +250,7 @@
 		6BA151642312605600F3B6AA /* Collection Screen */ = {
 			isa = PBXGroup;
 			children = (
+				6B36D1BB2314716200230D74 /* Cells */,
 				6BA1516B23126B0C00F3B6AA /* CollectionScreen.storyboard */,
 				6BA1516923126ADD00F3B6AA /* CollectionScreenViewController.swift */,
 			);
@@ -322,8 +356,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B36D1BF2314726B00230D74 /* BigCell.xib in Resources */,
 				6BB43F7F23114218006F84CE /* LaunchScreen.storyboard in Resources */,
 				6BA15166231260FA00F3B6AA /* SplashScreen.storyboard in Resources */,
+				6BEE606E2315BC96000C61ED /* CollectionCell.xib in Resources */,
 				6BA1516C23126B0C00F3B6AA /* CollectionScreen.storyboard in Resources */,
 				6BB43F7C23114218006F84CE /* Assets.xcassets in Resources */,
 			);
@@ -342,13 +378,16 @@
 				6BA151622311C17A00F3B6AA /* BaseViewController.swift in Sources */,
 				6BA1514A23119F2E00F3B6AA /* URLSessionProvider.swift in Sources */,
 				6BA1515E2311B95A00F3B6AA /* PixabayServiceWorker.swift in Sources */,
+				6B36D1B623144B2900230D74 /* UIViewController+extensions.swift in Sources */,
 				6BA1517323128EB200F3B6AA /* PictureCollection.swift in Sources */,
 				6BB3D507231188D4002167FE /* PixabayItem.swift in Sources */,
 				6BA1514723119F2E00F3B6AA /* NetworkTask.swift in Sources */,
+				6BEE606D2315BC96000C61ED /* CollectionCell.swift in Sources */,
 				6BB43F7523114217006F84CE /* AppDelegate.swift in Sources */,
 				6BA1514823119F2E00F3B6AA /* HTTPMethod.swift in Sources */,
 				6BA1514D23119F2E00F3B6AA /* URLRequestExtension.swift in Sources */,
 				6BB3D50923118932002167FE /* PixabaySearchResult.swift in Sources */,
+				6B36D1BE2314726B00230D74 /* BigCell.swift in Sources */,
 				6BA1514923119F2E00F3B6AA /* NetworkError.swift in Sources */,
 				6BA1514623119F2E00F3B6AA /* ParametersEncoding.swift in Sources */,
 				6BA1514523119F2E00F3B6AA /* HeaderKey.swift in Sources */,
@@ -359,6 +398,7 @@
 				6BA1514B23119F2E00F3B6AA /* URLComponentsExtension.swift in Sources */,
 				6BA151682312613900F3B6AA /* SplashScreenViewController.swift in Sources */,
 				6BA1516F231271A300F3B6AA /* PixabayApiParameters.swift in Sources */,
+				6B36D1B823144B4A00230D74 /* UIView+extensions.swift in Sources */,
 				6B36D1B0231431C200230D74 /* DownloadingProgressView.swift in Sources */,
 				6BA1515523119F2E00F3B6AA /* ProviderProtocol.swift in Sources */,
 			);
