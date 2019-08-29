@@ -43,9 +43,11 @@
 		6BB43F7F23114218006F84CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB43F7D23114218006F84CE /* LaunchScreen.storyboard */; };
 		6BEE606D2315BC96000C61ED /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE606B2315BC96000C61ED /* CollectionCell.swift */; };
 		6BEE606E2315BC96000C61ED /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BEE606C2315BC96000C61ED /* CollectionCell.xib */; };
+		B2631C65F09B92BA51DDB78F /* Pods_PixabayDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366EDA7D20FD12D0435C766C /* Pods_PixabayDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		366EDA7D20FD12D0435C766C /* Pods_PixabayDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixabayDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B36D1AF231431C200230D74 /* DownloadingProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadingProgressView.swift; sourceTree = "<group>"; };
 		6B36D1B323143D3600230D74 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		6B36D1B523144B2900230D74 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
@@ -84,6 +86,8 @@
 		6BB43F8023114218006F84CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BEE606B2315BC96000C61ED /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		6BEE606C2315BC96000C61ED /* CollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
+		7ED093B7AA4A36DF12CEB719 /* Pods-PixabayDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixabayDemo.release.xcconfig"; path = "Target Support Files/Pods-PixabayDemo/Pods-PixabayDemo.release.xcconfig"; sourceTree = "<group>"; };
+		85FA07BD49C618EB8247ECDD /* Pods-PixabayDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixabayDemo.debug.xcconfig"; path = "Target Support Files/Pods-PixabayDemo/Pods-PixabayDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,12 +95,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2631C65F09B92BA51DDB78F /* Pods_PixabayDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41FB5DEA3315C448D4C94C81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				366EDA7D20FD12D0435C766C /* Pods_PixabayDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6B36D1AE2314319C00230D74 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +288,8 @@
 			children = (
 				6BB43F7323114217006F84CE /* PixabayDemo */,
 				6BB43F7223114217006F84CE /* Products */,
+				B3E84C6666759AA22D60DCEF /* Pods */,
+				41FB5DEA3315C448D4C94C81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -301,6 +316,15 @@
 			path = PixabayDemo;
 			sourceTree = "<group>";
 		};
+		B3E84C6666759AA22D60DCEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85FA07BD49C618EB8247ECDD /* Pods-PixabayDemo.debug.xcconfig */,
+				7ED093B7AA4A36DF12CEB719 /* Pods-PixabayDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -308,9 +332,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BB43F8323114218006F84CE /* Build configuration list for PBXNativeTarget "PixabayDemo" */;
 			buildPhases = (
+				E3E165651F7EA43C5909B283 /* [CP] Check Pods Manifest.lock */,
 				6BB43F6D23114217006F84CE /* Sources */,
 				6BB43F6E23114217006F84CE /* Frameworks */,
 				6BB43F6F23114217006F84CE /* Resources */,
+				B4D6338A07A11BCB270AA4DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -369,6 +395,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B4D6338A07A11BCB270AA4DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PixabayDemo/Pods-PixabayDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PixabayDemo/Pods-PixabayDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3E165651F7EA43C5909B283 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PixabayDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6BB43F6D23114217006F84CE /* Sources */ = {
@@ -540,6 +615,7 @@
 		};
 		6BB43F8423114218006F84CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85FA07BD49C618EB8247ECDD /* Pods-PixabayDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +634,7 @@
 		};
 		6BB43F8523114218006F84CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ED093B7AA4A36DF12CEB719 /* Pods-PixabayDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
