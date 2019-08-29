@@ -21,7 +21,7 @@ final class CollectionScreenViewController: BaseViewController {
     }
     
     private func setupCollectionView() {
-        collectionView.register(UINib(nibName: CollectionCell.toString(), bundle: nil), forCellWithReuseIdentifier: CollectionCell.toString())
+        collectionView.registerCell(withXibName: CollectionCell.toString())
     }
 }
 

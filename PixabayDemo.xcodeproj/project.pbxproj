@@ -13,6 +13,7 @@
 		6B36D1B823144B4A00230D74 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1B723144B4A00230D74 /* UIView+extensions.swift */; };
 		6B36D1BE2314726B00230D74 /* BigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1BC2314726B00230D74 /* BigCell.swift */; };
 		6B36D1BF2314726B00230D74 /* BigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B36D1BD2314726B00230D74 /* BigCell.xib */; };
+		6B971036231835B80088E45C /* UICollectionView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B971035231835B80088E45C /* UICollectionView+extensions.swift */; };
 		6BA1514523119F2E00F3B6AA /* HeaderKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512823119F2E00F3B6AA /* HeaderKey.swift */; };
 		6BA1514623119F2E00F3B6AA /* ParametersEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512923119F2E00F3B6AA /* ParametersEncoding.swift */; };
 		6BA1514723119F2E00F3B6AA /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512A23119F2E00F3B6AA /* NetworkTask.swift */; };
@@ -51,6 +52,7 @@
 		6B36D1B723144B4A00230D74 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		6B36D1BC2314726B00230D74 /* BigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCell.swift; sourceTree = "<group>"; };
 		6B36D1BD2314726B00230D74 /* BigCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigCell.xib; sourceTree = "<group>"; };
+		6B971035231835B80088E45C /* UICollectionView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extensions.swift"; sourceTree = "<group>"; };
 		6BA1512823119F2E00F3B6AA /* HeaderKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderKey.swift; sourceTree = "<group>"; };
 		6BA1512923119F2E00F3B6AA /* ParametersEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametersEncoding.swift; sourceTree = "<group>"; };
 		6BA1512A23119F2E00F3B6AA /* NetworkTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				6B36D1B523144B2900230D74 /* UIViewController+extensions.swift */,
 				6B36D1B723144B4A00230D74 /* UIView+extensions.swift */,
+				6B971035231835B80088E45C /* UICollectionView+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				6BA151622311C17A00F3B6AA /* BaseViewController.swift in Sources */,
 				6BA1514A23119F2E00F3B6AA /* URLSessionProvider.swift in Sources */,
 				6BA1515E2311B95A00F3B6AA /* PixabayServiceWorker.swift in Sources */,
+				6B971036231835B80088E45C /* UICollectionView+extensions.swift in Sources */,
 				6B36D1B623144B2900230D74 /* UIViewController+extensions.swift in Sources */,
 				6BA1517323128EB200F3B6AA /* PictureCollection.swift in Sources */,
 				6BB3D507231188D4002167FE /* PixabayItem.swift in Sources */,

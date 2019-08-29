@@ -37,7 +37,7 @@ class CollectionCell: UICollectionViewCell {
     private func setup() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib(nibName: BigCell.toString(), bundle: nil), forCellWithReuseIdentifier: BigCell.toString())
+        collectionView.registerCell(withXibName: BigCell.toString())
         
         titleLabel.text = nil
         pixabayItems.removeAll()
