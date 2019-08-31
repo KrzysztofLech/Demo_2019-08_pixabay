@@ -6,14 +6,16 @@
 //  Copyright © 2019 Krzysztof Lech. All rights reserved.
 //
 
-struct PixabayImageSearchResult: Decodable {
-    
-    public enum CodingKeys: String, CodingKey {
+import Foundation
+
+final class PixabayImageSearchResult: Decodable {
+
+    enum CodingKeys: String, CodingKey {
         case total
         case totalHits
         case items = "hits"
     }
-    
+
     let total: Int
     let totalHits: Int
     let items: [PixabayImageItem]

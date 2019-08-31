@@ -59,6 +59,7 @@ extension CollectionCell: UICollectionViewDataSource {
         
         let imageId = pixabayItems[indexPath.row].id
         let image = ImageCacheService.shared.getFromCache(key: imageId)
+        //let image = DataManager.shared.findPreviewImage(withId: imageId)
         cell.configure(image: image)
         
         return cell

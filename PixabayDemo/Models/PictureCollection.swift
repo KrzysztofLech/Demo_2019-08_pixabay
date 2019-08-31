@@ -6,7 +6,15 @@
 //  Copyright © 2019 Krzysztof Lech. All rights reserved.
 //
 
-struct PictureCollection {
+import Foundation
+
+final class PictureCollection {
+
     let name: String
     let items: [PixabayImageItem]
+    
+    init(name: String, items: [PixabayImageItem]) {
+        self.name = name
+        self.items = items
+    }
 }

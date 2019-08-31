@@ -23,7 +23,7 @@ final class SplashScreenViewController: BaseViewController {
         
         controller.delegate = downloadingProgressView
         fetchData()
-        ///showCollectionScreen()
+        //showCollectionScreen()
     }
     
     private func fetchData() {
@@ -38,7 +38,7 @@ final class SplashScreenViewController: BaseViewController {
         }
     }
     
-    private func downloadImages() {
+    private func downloadImages() {        
         controller.downloadCollectionImages { [weak self] error in
             if let errorMessage = error?.message {
                 self?.showLoaderError(withMessage: errorMessage)
