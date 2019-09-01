@@ -12,6 +12,7 @@
 		6B2DF544231BE6D4004D18CF /* girl.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B2DF541231BE6D3004D18CF /* girl.json */; };
 		6B2DF545231BE6D4004D18CF /* greece.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B2DF542231BE6D3004D18CF /* greece.json */; };
 		6B2DF546231BE6D4004D18CF /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B2DF543231BE6D3004D18CF /* city.json */; };
+		6B2DF559231C0F65004D18CF /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DF558231C0F65004D18CF /* ImageDownloadOperation.swift */; };
 		6B36D1B0231431C200230D74 /* DownloadingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1AF231431C200230D74 /* DownloadingProgressView.swift */; };
 		6B36D1B423143D3600230D74 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1B323143D3600230D74 /* ImageCacheService.swift */; };
 		6B36D1B623144B2900230D74 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1B523144B2900230D74 /* UIViewController+extensions.swift */; };
@@ -58,6 +59,7 @@
 		6B2DF541231BE6D3004D18CF /* girl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = girl.json; sourceTree = "<group>"; };
 		6B2DF542231BE6D3004D18CF /* greece.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = greece.json; sourceTree = "<group>"; };
 		6B2DF543231BE6D3004D18CF /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
+		6B2DF558231C0F65004D18CF /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
 		6B36D1AF231431C200230D74 /* DownloadingProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadingProgressView.swift; sourceTree = "<group>"; };
 		6B36D1B323143D3600230D74 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		6B36D1B523144B2900230D74 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			path = JSONs;
 			sourceTree = "<group>";
 		};
+		6B2DF557231C0F25004D18CF /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				6B2DF558231C0F65004D18CF /* ImageDownloadOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 		6B36D1AE2314319C00230D74 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +198,7 @@
 		6BA1512323119D8900F3B6AA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6B2DF557231C0F25004D18CF /* Operations */,
 				6B36D1AE2314319C00230D74 /* Views */,
 				6B36D1B923144B7900230D74 /* Extensions */,
 			);
@@ -507,6 +518,7 @@
 				6BA1514523119F2E00F3B6AA /* HeaderKey.swift in Sources */,
 				6BA1516A23126ADD00F3B6AA /* CollectionScreenViewController.swift in Sources */,
 				6BA15171231280CE00F3B6AA /* SplashScreenController.swift in Sources */,
+				6B2DF559231C0F65004D18CF /* ImageDownloadOperation.swift in Sources */,
 				6BA151602311BA7B00F3B6AA /* PixabayService.swift in Sources */,
 				6B36D1B423143D3600230D74 /* ImageCacheService.swift in Sources */,
 				6BA1514B23119F2E00F3B6AA /* URLComponentsExtension.swift in Sources */,

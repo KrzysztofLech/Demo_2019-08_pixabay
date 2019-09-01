@@ -94,7 +94,7 @@ final class SplashScreenController {
                 let items = try jsonDecoder.decode([PixabayImageItem].self, from: data)
                 return items
             } catch {
-                print("failed to convert data")
+                print("! - failed to convert data")
             }
         } catch let error {
             print(error)
@@ -118,38 +118,32 @@ final class SplashScreenController {
     }
 
     
-    // MARK: - Images preview methods
+    // MARK: - Images downloading methods
     // //////////////////////////////////////////////////////////////////////////
     
     func downloadCollectionImages(completion: @escaping (NetworkError?)->()) {
-        let allImages = collections.flatMap { $0.items }
-
-        let dispatchGroup = DispatchGroup()
-
-        allImages.forEach { [weak self] item in
+        let allItems = collections.flatMap { $0.items }
+        
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        
+        allItems.forEach { [weak self] item in
             guard let self = self else { return }
-            dispatchGroup.enter()
-
-            serviceWorker?.downloadImage(url: item.largeImageURL) { result in
-                DispatchQueue.main.async {
-                    switch result {
-                    case .success(let image):
-                        
-                        //let imageData = image.jpegData(compressionQuality: 0.9)
-                        //let pixabayImage = PixaBayImage(imageId: item.id, previewSizeImageData: imageData)
-                        //DataManager.shared.addObject(object: pixabayImage)
-                        ImageCacheService.shared.cache(object: image, forKey: item.id)
-                        
-                    case .failure(let error):
-                        DispatchQueue.main.async { completion(error) }
-                    }
-                    
+            
+            let operation = ImageDownloadOperation(url: item.largeImageURL, completionHandler: { image in
+                if let image = image {
+                    ImageCacheService.shared.cache(object: image, forKey: item.id)
                     self.progress += self.progressStep
-                    dispatchGroup.leave()
+                    print("Finished downloading: ", item.id)
+                } else {
+                    print("!! Problem with downloading: ", item.id)
                 }
-            }
+            })
+            queue.addOperation(operation)
         }
-
-        dispatchGroup.notify(queue: .main) { completion(nil) }
+        
+        queue.addOperation {
+            DispatchQueue.main.async { completion(nil) }
+        }
     }
 }
