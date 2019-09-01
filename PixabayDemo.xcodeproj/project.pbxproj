@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6B192F882318644B00204380 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B192F872318644B00204380 /* DataManager.swift */; };
 		6B2DF521231AC421004D18CF /* PixabayImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DF520231AC421004D18CF /* PixabayImage.swift */; };
+		6B2DF544231BE6D4004D18CF /* girl.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B2DF541231BE6D3004D18CF /* girl.json */; };
+		6B2DF545231BE6D4004D18CF /* greece.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B2DF542231BE6D3004D18CF /* greece.json */; };
+		6B2DF546231BE6D4004D18CF /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B2DF543231BE6D3004D18CF /* city.json */; };
 		6B36D1B0231431C200230D74 /* DownloadingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1AF231431C200230D74 /* DownloadingProgressView.swift */; };
 		6B36D1B423143D3600230D74 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1B323143D3600230D74 /* ImageCacheService.swift */; };
 		6B36D1B623144B2900230D74 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1B523144B2900230D74 /* UIViewController+extensions.swift */; };
@@ -52,6 +55,9 @@
 		366EDA7D20FD12D0435C766C /* Pods_PixabayDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixabayDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B192F872318644B00204380 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		6B2DF520231AC421004D18CF /* PixabayImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayImage.swift; sourceTree = "<group>"; };
+		6B2DF541231BE6D3004D18CF /* girl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = girl.json; sourceTree = "<group>"; };
+		6B2DF542231BE6D3004D18CF /* greece.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = greece.json; sourceTree = "<group>"; };
+		6B2DF543231BE6D3004D18CF /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		6B36D1AF231431C200230D74 /* DownloadingProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadingProgressView.swift; sourceTree = "<group>"; };
 		6B36D1B323143D3600230D74 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		6B36D1B523144B2900230D74 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
@@ -120,6 +126,16 @@
 				6B192F872318644B00204380 /* DataManager.swift */,
 			);
 			path = "Data Manager";
+			sourceTree = "<group>";
+		};
+		6B2DF540231BE5E5004D18CF /* JSONs */ = {
+			isa = PBXGroup;
+			children = (
+				6B2DF542231BE6D3004D18CF /* greece.json */,
+				6B2DF543231BE6D3004D18CF /* city.json */,
+				6B2DF541231BE6D3004D18CF /* girl.json */,
+			);
+			path = JSONs;
 			sourceTree = "<group>";
 		};
 		6B36D1AE2314319C00230D74 /* Views */ = {
@@ -325,6 +341,7 @@
 				6B36D1B123143C3D00230D74 /* Services */,
 				6BA1512323119D8900F3B6AA /* Helpers */,
 				6BA1512523119DB400F3B6AA /* Other */,
+				6B2DF540231BE5E5004D18CF /* JSONs */,
 				6BB43F7B23114218006F84CE /* Assets.xcassets */,
 			);
 			path = PixabayDemo;
@@ -399,12 +416,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2DF546231BE6D4004D18CF /* city.json in Resources */,
 				6B36D1BF2314726B00230D74 /* BigCell.xib in Resources */,
 				6BB43F7F23114218006F84CE /* LaunchScreen.storyboard in Resources */,
 				6BA15166231260FA00F3B6AA /* SplashScreen.storyboard in Resources */,
 				6BEE606E2315BC96000C61ED /* CollectionCell.xib in Resources */,
 				6BA1516C23126B0C00F3B6AA /* CollectionScreen.storyboard in Resources */,
 				6BB43F7C23114218006F84CE /* Assets.xcassets in Resources */,
+				6B2DF545231BE6D4004D18CF /* greece.json in Resources */,
+				6B2DF544231BE6D4004D18CF /* girl.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

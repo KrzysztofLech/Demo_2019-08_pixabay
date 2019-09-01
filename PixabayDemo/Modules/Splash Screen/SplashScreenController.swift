@@ -41,9 +41,17 @@ final class SplashScreenController {
         }
     }
     
+    
+    // MARK: - Init method
+    // //////////////////////////////////////////////////////////////////////////
+    
     init() {
         serviceWorker = PixabayServiceWorker()
     }
+    
+
+    // MARK: - Fetching methods
+    // //////////////////////////////////////////////////////////////////////////
 
     func fetchData(completion: @escaping (NetworkError?)->()) {
         let dispatchGroup = DispatchGroup()
@@ -54,8 +62,10 @@ final class SplashScreenController {
             serviceWorker?.getTopPopularPicturesFrom(category: category) { response in
                 DispatchQueue.main.async {
                     switch response {
-                    case .success(let data): self?.createCollection(withData: data, andCategory: category)
-                    case .failure(let error): completion(error)
+                    case .success(let data):
+                        self?.createCollection(withData: data.items, andCategory: category)
+                    case .failure(let error):
+                        completion(error)
                     }
                     
                     dispatchGroup.leave()
@@ -66,8 +76,34 @@ final class SplashScreenController {
         dispatchGroup.notify(queue: .main) { completion(nil) }
     }
     
-    private func createCollection(withData data: PixabayImageSearchResult, andCategory category: ApiParameters.Category) {
-        let tenMostViewedPictures = findMostViewedPictures(items: data.items)
+    func fetchDataFromFiles(completion: @escaping (NetworkError?)->()) {
+        categories.forEach { [weak self] category in
+            guard let items = self?.serializeJsonCollection(category.rawValue) else { return }
+            self?.createCollection(withData: items, andCategory: category)
+        }
+        completion(nil)
+    }
+    
+    private func serializeJsonCollection(_ name: String) -> [PixabayImageItem]? {
+        let path = Bundle.main.path(forResource: name, ofType: "json")
+        let url = URL(fileURLWithPath: path!)
+        let jsonDecoder = JSONDecoder()
+        do {
+            let data = try Data(contentsOf: url)
+            do {
+                let items = try jsonDecoder.decode([PixabayImageItem].self, from: data)
+                return items
+            } catch {
+                print("failed to convert data")
+            }
+        } catch let error {
+            print(error)
+        }
+        return nil
+    }
+    
+    private func createCollection(withData data: [PixabayImageItem], andCategory category: ApiParameters.Category) {
+        let tenMostViewedPictures = findMostViewedPictures(items: data)
         let collection = PictureCollection(name: category.rawValue.capitalized,
                                            items: tenMostViewedPictures)
         collections.append(collection)
@@ -81,6 +117,10 @@ final class SplashScreenController {
         return Array(sortedArray.prefix(Constants.topViewedPhotosNumber))
     }
 
+    
+    // MARK: - Images preview methods
+    // //////////////////////////////////////////////////////////////////////////
+    
     func downloadCollectionImages(completion: @escaping (NetworkError?)->()) {
         let allImages = collections.flatMap { $0.items }
 
@@ -112,6 +152,4 @@ final class SplashScreenController {
 
         dispatchGroup.notify(queue: .main) { completion(nil) }
     }
-    
-    
 }

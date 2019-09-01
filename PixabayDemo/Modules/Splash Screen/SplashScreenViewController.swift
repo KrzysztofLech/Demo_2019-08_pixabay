@@ -17,14 +17,25 @@ final class SplashScreenViewController: BaseViewController {
     @IBOutlet private var downloadingProgressView: DownloadingProgressView!
     
     private let controller = SplashScreenController()
+
+    
+    // MARK: - Lifecycle methods
+    // //////////////////////////////////////////////////////////////////////////
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         controller.delegate = downloadingProgressView
-        fetchData()
+        //fetchData()
+        fetchDataFromFiles()
         //showCollectionScreen()
+        
+//        let serializer = JSONSerializer()
+//        serializer.serialize(input: "greece")
     }
+    
+    // MARK: - Fetching methods
+    // //////////////////////////////////////////////////////////////////////////
     
     private func fetchData() {
         showLoader()
@@ -38,6 +49,22 @@ final class SplashScreenViewController: BaseViewController {
         }
     }
     
+    private func fetchDataFromFiles() {
+        showLoader()
+        controller.fetchDataFromFiles { [weak self] error in
+            if let errorMessage = error?.message {
+                self?.showLoaderError(withMessage: errorMessage)
+            } else {
+                print("Data was read correctly!")       ///
+                self?.downloadImages()
+            }
+        }
+    }
+
+    
+    // MARK: - Images downloading methods
+    // //////////////////////////////////////////////////////////////////////////
+
     private func downloadImages() {        
         controller.downloadCollectionImages { [weak self] error in
             if let errorMessage = error?.message {
@@ -48,6 +75,10 @@ final class SplashScreenViewController: BaseViewController {
             }
         }
     }
+
+    
+    // MARK: - Navigation methods
+    // //////////////////////////////////////////////////////////////////////////
     
     private func showCollectionScreen() {
         hideLoader()
