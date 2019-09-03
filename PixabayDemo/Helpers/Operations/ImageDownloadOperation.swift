@@ -50,11 +50,6 @@ class ImageDownloadOperation: Operation {
     }
     
     override func start() {
-        /*
-         if the operation or queue got cancelled even
-         before the operation has started, set the
-         operation state to finished and return
-         */
         if(isCancelled) {
             state = .finished
             return

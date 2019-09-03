@@ -15,7 +15,7 @@ protocol ProgressViewDelegate: AnyObject {
 final class SplashScreenController {
     
     private enum Constants {
-        static let topViewedPhotosNumber: Int = 4
+        static let topViewedPhotosNumber: Int = 5
     }
     
     private var serviceWorker: PixabayServiceWorkerProtocol?
@@ -64,6 +64,7 @@ final class SplashScreenController {
                     switch response {
                     case .success(let data):
                         self?.createCollection(withData: data.items, andCategory: category)
+                        
                     case .failure(let error):
                         completion(error)
                     }

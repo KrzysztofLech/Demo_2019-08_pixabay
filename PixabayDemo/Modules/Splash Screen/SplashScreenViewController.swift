@@ -26,12 +26,9 @@ final class SplashScreenViewController: BaseViewController {
         super.viewDidAppear(animated)
         
         controller.delegate = downloadingProgressView
-        //fetchData()
-        fetchDataFromFiles()
+        fetchData()
+        //fetchDataFromFiles()
         //showCollectionScreen()
-        
-//        let serializer = JSONSerializer()
-//        serializer.serialize(input: "greece")
     }
     
     // MARK: - Fetching methods
