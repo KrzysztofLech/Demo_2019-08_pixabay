@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CollectionScreenViewController: BaseViewController {
+final class CollectionScreenViewController: UIViewController {
     
     @IBOutlet private var collectionView: UICollectionView!
     

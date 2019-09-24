@@ -15,14 +15,13 @@ protocol ProgressViewDelegate: AnyObject {
 final class SplashScreenController {
     
     private enum Constants {
-        static let topViewedPhotosNumber: Int = 5
+        static let topViewedPhotosNumber: Int = 2
     }
     
-    private var serviceWorker: PixabayServiceWorkerProtocol?
-    
+    var collections: [PictureCollection] = []
     weak var delegate: ProgressViewDelegate?
     
-    var collections: [PictureCollection] = []
+    private let serviceWorker: PixabayServiceWorkerProtocol
     private let categories: [ApiParameters.Category] = [
         .greece, .girl, .city
     ]
@@ -41,17 +40,13 @@ final class SplashScreenController {
         }
     }
     
-    
     // MARK: - Init method
-    // //////////////////////////////////////////////////////////////////////////
     
     init() {
         serviceWorker = PixabayServiceWorker()
     }
     
-
     // MARK: - Fetching methods
-    // //////////////////////////////////////////////////////////////////////////
 
     func fetchData(completion: @escaping (NetworkError?)->()) {
         let dispatchGroup = DispatchGroup()
@@ -59,7 +54,7 @@ final class SplashScreenController {
         categories.forEach { [weak self] category in
             dispatchGroup.enter()
 
-            serviceWorker?.getTopPopularPicturesFrom(category: category) { response in
+            serviceWorker.getTopPopularPicturesFrom(category: category) { response in
                 DispatchQueue.main.async {
                     switch response {
                     case .success(let data):
@@ -118,9 +113,7 @@ final class SplashScreenController {
         return Array(sortedArray.prefix(Constants.topViewedPhotosNumber))
     }
 
-    
     // MARK: - Images downloading methods
-    // //////////////////////////////////////////////////////////////////////////
     
     func downloadCollectionImages(completion: @escaping (NetworkError?)->()) {
         let allItems = collections.flatMap { $0.items }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		6B36D1B823144B4A00230D74 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1B723144B4A00230D74 /* UIView+extensions.swift */; };
 		6B36D1BE2314726B00230D74 /* BigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1BC2314726B00230D74 /* BigCell.swift */; };
 		6B36D1BF2314726B00230D74 /* BigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B36D1BD2314726B00230D74 /* BigCell.xib */; };
+		6B8E2B80233A86990088FF90 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8E2B7F233A86990088FF90 /* SplashScreenViewController.xib */; };
 		6B971036231835B80088E45C /* UICollectionView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B971035231835B80088E45C /* UICollectionView+extensions.swift */; };
 		6BA1514523119F2E00F3B6AA /* HeaderKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512823119F2E00F3B6AA /* HeaderKey.swift */; };
 		6BA1514623119F2E00F3B6AA /* ParametersEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512923119F2E00F3B6AA /* ParametersEncoding.swift */; };
@@ -35,7 +36,6 @@
 		6BA1515E2311B95A00F3B6AA /* PixabayServiceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1515D2311B95A00F3B6AA /* PixabayServiceWorker.swift */; };
 		6BA151602311BA7B00F3B6AA /* PixabayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1515F2311BA7B00F3B6AA /* PixabayService.swift */; };
 		6BA151622311C17A00F3B6AA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA151612311C17A00F3B6AA /* BaseViewController.swift */; };
-		6BA15166231260FA00F3B6AA /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA15165231260FA00F3B6AA /* SplashScreen.storyboard */; };
 		6BA151682312613900F3B6AA /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA151672312613900F3B6AA /* SplashScreenViewController.swift */; };
 		6BA1516A23126ADD00F3B6AA /* CollectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1516923126ADD00F3B6AA /* CollectionScreenViewController.swift */; };
 		6BA1516C23126B0C00F3B6AA /* CollectionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA1516B23126B0C00F3B6AA /* CollectionScreen.storyboard */; };
@@ -66,6 +66,7 @@
 		6B36D1B723144B4A00230D74 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		6B36D1BC2314726B00230D74 /* BigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCell.swift; sourceTree = "<group>"; };
 		6B36D1BD2314726B00230D74 /* BigCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigCell.xib; sourceTree = "<group>"; };
+		6B8E2B7F233A86990088FF90 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
 		6B971035231835B80088E45C /* UICollectionView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extensions.swift"; sourceTree = "<group>"; };
 		6BA1512823119F2E00F3B6AA /* HeaderKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderKey.swift; sourceTree = "<group>"; };
 		6BA1512923119F2E00F3B6AA /* ParametersEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametersEncoding.swift; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		6BA1515D2311B95A00F3B6AA /* PixabayServiceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayServiceWorker.swift; sourceTree = "<group>"; };
 		6BA1515F2311BA7B00F3B6AA /* PixabayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayService.swift; sourceTree = "<group>"; };
 		6BA151612311C17A00F3B6AA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		6BA15165231260FA00F3B6AA /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		6BA151672312613900F3B6AA /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		6BA1516923126ADD00F3B6AA /* CollectionScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenViewController.swift; sourceTree = "<group>"; };
 		6BA1516B23126B0C00F3B6AA /* CollectionScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionScreen.storyboard; sourceTree = "<group>"; };
@@ -296,7 +296,7 @@
 		6BA1516323125FD900F3B6AA /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
-				6BA15165231260FA00F3B6AA /* SplashScreen.storyboard */,
+				6B8E2B7F233A86990088FF90 /* SplashScreenViewController.xib */,
 				6BA151672312613900F3B6AA /* SplashScreenViewController.swift */,
 				6BA15170231280CE00F3B6AA /* SplashScreenController.swift */,
 			);
@@ -430,7 +430,7 @@
 				6B2DF546231BE6D4004D18CF /* city.json in Resources */,
 				6B36D1BF2314726B00230D74 /* BigCell.xib in Resources */,
 				6BB43F7F23114218006F84CE /* LaunchScreen.storyboard in Resources */,
-				6BA15166231260FA00F3B6AA /* SplashScreen.storyboard in Resources */,
+				6B8E2B80233A86990088FF90 /* SplashScreenViewController.xib in Resources */,
 				6BEE606E2315BC96000C61ED /* CollectionCell.xib in Resources */,
 				6BA1516C23126B0C00F3B6AA /* CollectionScreen.storyboard in Resources */,
 				6BB43F7C23114218006F84CE /* Assets.xcassets in Resources */,
@@ -448,18 +448,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PixabayDemo/Pods-PixabayDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-PixabayDemo/Pods-PixabayDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-PixabayDemo/Pods-PixabayDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
