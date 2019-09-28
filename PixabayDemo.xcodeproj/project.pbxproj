@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B192F882318644B00204380 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B192F872318644B00204380 /* DataManager.swift */; };
-		6B2DF521231AC421004D18CF /* PixabayImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DF520231AC421004D18CF /* PixabayImage.swift */; };
 		6B2DF544231BE6D4004D18CF /* girl.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B2DF541231BE6D3004D18CF /* girl.json */; };
 		6B2DF545231BE6D4004D18CF /* greece.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B2DF542231BE6D3004D18CF /* greece.json */; };
 		6B2DF546231BE6D4004D18CF /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B2DF543231BE6D3004D18CF /* city.json */; };
@@ -49,13 +47,11 @@
 		6BB43F7F23114218006F84CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB43F7D23114218006F84CE /* LaunchScreen.storyboard */; };
 		6BEE606D2315BC96000C61ED /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE606B2315BC96000C61ED /* CollectionCell.swift */; };
 		6BEE606E2315BC96000C61ED /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BEE606C2315BC96000C61ED /* CollectionCell.xib */; };
-		B2631C65F09B92BA51DDB78F /* Pods_PixabayDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366EDA7D20FD12D0435C766C /* Pods_PixabayDemo.framework */; };
+		D13380CA72197783054797A9 /* Pods_PixabayDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366EDA7D20FD12D0435C766C /* Pods_PixabayDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		366EDA7D20FD12D0435C766C /* Pods_PixabayDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixabayDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B192F872318644B00204380 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		6B2DF520231AC421004D18CF /* PixabayImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayImage.swift; sourceTree = "<group>"; };
 		6B2DF541231BE6D3004D18CF /* girl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = girl.json; sourceTree = "<group>"; };
 		6B2DF542231BE6D3004D18CF /* greece.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = greece.json; sourceTree = "<group>"; };
 		6B2DF543231BE6D3004D18CF /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
@@ -107,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2631C65F09B92BA51DDB78F /* Pods_PixabayDemo.framework in Frameworks */,
+				D13380CA72197783054797A9 /* Pods_PixabayDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,14 +116,6 @@
 				366EDA7D20FD12D0435C766C /* Pods_PixabayDemo.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6B192F862318642400204380 /* Data Manager */ = {
-			isa = PBXGroup;
-			children = (
-				6B192F872318644B00204380 /* DataManager.swift */,
-			);
-			path = "Data Manager";
 			sourceTree = "<group>";
 		};
 		6B2DF540231BE5E5004D18CF /* JSONs */ = {
@@ -161,7 +149,6 @@
 			children = (
 				6BA1512623119F2E00F3B6AA /* Networking */,
 				6B36D1B223143C8B00230D74 /* Image Cache */,
-				6B192F862318642400204380 /* Data Manager */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -319,7 +306,6 @@
 				6BB3D50823118932002167FE /* PixabaySearchResult.swift */,
 				6BB3D506231188D4002167FE /* PixabayImageItem.swift */,
 				6BA1517223128EB200F3B6AA /* PictureCollection.swift */,
-				6B2DF520231AC421004D18CF /* PixabayImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,7 +364,6 @@
 				6BB43F6D23114217006F84CE /* Sources */,
 				6BB43F6E23114217006F84CE /* Frameworks */,
 				6BB43F6F23114217006F84CE /* Resources */,
-				B4D6338A07A11BCB270AA4DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -442,23 +427,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B4D6338A07A11BCB270AA4DF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PixabayDemo/Pods-PixabayDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PixabayDemo/Pods-PixabayDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PixabayDemo/Pods-PixabayDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E3E165651F7EA43C5909B283 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -505,7 +473,6 @@
 				6BA1514D23119F2E00F3B6AA /* URLRequestExtension.swift in Sources */,
 				6BB3D50923118932002167FE /* PixabaySearchResult.swift in Sources */,
 				6B36D1BE2314726B00230D74 /* BigCell.swift in Sources */,
-				6B192F882318644B00204380 /* DataManager.swift in Sources */,
 				6BA1514923119F2E00F3B6AA /* NetworkError.swift in Sources */,
 				6BA1514623119F2E00F3B6AA /* ParametersEncoding.swift in Sources */,
 				6BA1514523119F2E00F3B6AA /* HeaderKey.swift in Sources */,
@@ -519,7 +486,6 @@
 				6BA1516F231271A300F3B6AA /* PixabayApiParameters.swift in Sources */,
 				6B36D1B823144B4A00230D74 /* UIView+extensions.swift in Sources */,
 				6B36D1B0231431C200230D74 /* DownloadingProgressView.swift in Sources */,
-				6B2DF521231AC421004D18CF /* PixabayImage.swift in Sources */,
 				6BA1515523119F2E00F3B6AA /* ProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

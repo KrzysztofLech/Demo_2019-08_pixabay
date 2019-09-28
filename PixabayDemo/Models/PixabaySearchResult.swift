@@ -6,8 +6,6 @@
 //  Copyright © 2019 Krzysztof Lech. All rights reserved.
 //
 
-import Foundation
-
 final class PixabayImageSearchResult: Decodable {
 
     enum CodingKeys: String, CodingKey {

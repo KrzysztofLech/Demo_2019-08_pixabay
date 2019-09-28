@@ -15,9 +15,10 @@ protocol ProgressViewDelegate: AnyObject {
 final class SplashScreenController {
     
     private enum Constants {
-        static let topViewedPhotosNumber: Int = 2
+        static let topViewedPhotosNumber: Int = 3
     }
     
+    var collections: [PictureCollection] = []
     weak var delegate: ProgressViewDelegate?
     
     private let serviceWorker: PixabayServiceWorkerProtocol
@@ -48,8 +49,6 @@ final class SplashScreenController {
     // MARK: - Fetching methods
 
     func fetchData(completion: @escaping (NetworkError?)->()) {
-        DataManager.shared.deleteAll()
-    
         let dispatchGroup = DispatchGroup()
 
         categories.forEach { [weak self] category in
@@ -74,7 +73,7 @@ final class SplashScreenController {
         let tenMostViewedPictures = findMostViewedPictures(items: data)
         let collection = PictureCollection(name: category.rawValue.capitalized,
                                            items: tenMostViewedPictures)
-        DataManager.shared.addObject(object: collection)
+        collections.append(collection)
                 
         print(collection.name, collection.items.count)   //// to remove
     }
@@ -90,30 +89,28 @@ final class SplashScreenController {
     // MARK: - Images downloading methods
     
     func downloadCollectionImages(completion: @escaping (NetworkError?)->()) {
-        let allItems = DataManager.shared.fetchAllImageItems()
+        let allItems = collections.flatMap { $0.items }
         
-        print("$$$$$$$: ", allItems.count)
-        
-//        let queue = OperationQueue()
-//        queue.maxConcurrentOperationCount = 1
-//
-//        allItems.forEach { [weak self] item in
-//            guard let self = self else { return }
-//
-//            let operation = ImageDownloadOperation(url: item.largeImageURL, completionHandler: { image in
-//                if let image = image {
-//                    ImageCacheService.shared.cache(object: image, forKey: item.id)
-//                    self.progress += self.progressStep
-//                    print("Finished downloading: ", item.id)
-//                } else {
-//                    print("!! Problem with downloading: ", item.id)
-//                }
-//            })
-//            queue.addOperation(operation)
-//        }
-//
-//        queue.addOperation {
-//            DispatchQueue.main.async { completion(nil) }
-//        }
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+
+        allItems.forEach { [weak self] item in
+            guard let self = self else { return }
+
+            let operation = ImageDownloadOperation(url: item.largeImageURL, completionHandler: { image in
+                if let image = image {
+                    ImageCacheService.shared.cache(object: image, forKey: item.id)
+                    self.progress += self.progressStep
+                    print("Finished downloading: ", item.id)
+                } else {
+                    print("!! Problem with downloading: ", item.id)
+                }
+            })
+            queue.addOperation(operation)
+        }
+
+        queue.addOperation {
+            DispatchQueue.main.async { completion(nil) }
+        }
     }
 }

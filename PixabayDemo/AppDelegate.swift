@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupWindow()
-        setupRealm()
-        
         return true
     }
     
@@ -25,10 +22,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = SplashScreenViewController()
         window?.makeKeyAndVisible()
-    }
-    
-    private func setupRealm() {
-        let realmLocation = Realm.Configuration.defaultConfiguration.fileURL
-        print("Realm data file location: ", realmLocation ?? "")
     }
 }
