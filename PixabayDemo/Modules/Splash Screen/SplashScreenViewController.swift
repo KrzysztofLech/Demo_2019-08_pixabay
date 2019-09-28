@@ -25,7 +25,6 @@ final class SplashScreenViewController: BaseViewController {
         
         controller.delegate = downloadingProgressView
         fetchData()
-        //fetchDataFromFiles()
     }
     
     // MARK: - Fetching methods
@@ -33,23 +32,14 @@ final class SplashScreenViewController: BaseViewController {
     private func fetchData() {
         showLoader()
         controller.fetchData { [weak self] error in
-            if let errorMessage = error?.message {
-                self?.showLoaderError(withMessage: errorMessage)
-            } else {
-                print("Data downloaded!")       ///
-                self?.downloadImages()
-            }
-        }
-    }
-    
-    private func fetchDataFromFiles() {
-        showLoader()
-        controller.fetchDataFromFiles { [weak self] error in
-            if let errorMessage = error?.message {
-                self?.showLoaderError(withMessage: errorMessage)
-            } else {
-                print("Data was read correctly!")       ///
-                self?.downloadImages()
+            DispatchQueue.main.async {
+                if let errorMessage = error?.message {
+                    self?.showLoaderError(withMessage: errorMessage)
+                } else {
+                    print("Data downloaded!")       ///
+                    self?.downloadImages()
+                    ///self?.showCollectionScreen()
+                }
             }
         }
     }
@@ -71,13 +61,8 @@ final class SplashScreenViewController: BaseViewController {
     // MARK: - Navigation methods
     
     private func showCollectionScreen() {
-        let storyboard = UIStoryboard(name: "CollectionScreen", bundle: nil)
-        guard
-            let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController,
-            let viewController = navigationController.topViewController as? CollectionScreenViewController
-            else { return }
-        
-        viewController.collections = controller.collections
+        let storyboard = UIStoryboard(name: Constants.collectionScreenIdentifier, bundle: nil)
+        guard let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController else { return }
         present(navigationController, animated: true)
     }
 }

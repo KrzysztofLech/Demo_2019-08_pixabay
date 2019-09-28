@@ -1,5 +1,5 @@
 //
-//  PixabayItem.swift
+//  PixabayImageItem.swift
 //  PixabayDemo
 //
 //  Created by Krzysztof Lech on 24/08/2019.

@@ -42,7 +42,7 @@
 		6BA1516F231271A300F3B6AA /* PixabayApiParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1516E231271A300F3B6AA /* PixabayApiParameters.swift */; };
 		6BA15171231280CE00F3B6AA /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA15170231280CE00F3B6AA /* SplashScreenController.swift */; };
 		6BA1517323128EB200F3B6AA /* PictureCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1517223128EB200F3B6AA /* PictureCollection.swift */; };
-		6BB3D507231188D4002167FE /* PixabayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3D506231188D4002167FE /* PixabayItem.swift */; };
+		6BB3D507231188D4002167FE /* PixabayImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3D506231188D4002167FE /* PixabayImageItem.swift */; };
 		6BB3D50923118932002167FE /* PixabaySearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3D50823118932002167FE /* PixabaySearchResult.swift */; };
 		6BB43F7523114217006F84CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB43F7423114217006F84CE /* AppDelegate.swift */; };
 		6BB43F7C23114218006F84CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BB43F7B23114218006F84CE /* Assets.xcassets */; };
@@ -89,7 +89,7 @@
 		6BA1516E231271A300F3B6AA /* PixabayApiParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayApiParameters.swift; sourceTree = "<group>"; };
 		6BA15170231280CE00F3B6AA /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 		6BA1517223128EB200F3B6AA /* PictureCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollection.swift; sourceTree = "<group>"; };
-		6BB3D506231188D4002167FE /* PixabayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayItem.swift; sourceTree = "<group>"; };
+		6BB3D506231188D4002167FE /* PixabayImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayImageItem.swift; sourceTree = "<group>"; };
 		6BB3D50823118932002167FE /* PixabaySearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabaySearchResult.swift; sourceTree = "<group>"; };
 		6BB43F7123114217006F84CE /* PixabayDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixabayDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB43F7423114217006F84CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -317,7 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				6BB3D50823118932002167FE /* PixabaySearchResult.swift */,
-				6BB3D506231188D4002167FE /* PixabayItem.swift */,
+				6BB3D506231188D4002167FE /* PixabayImageItem.swift */,
 				6BA1517223128EB200F3B6AA /* PictureCollection.swift */,
 				6B2DF520231AC421004D18CF /* PixabayImage.swift */,
 			);
@@ -497,7 +497,7 @@
 				6B971036231835B80088E45C /* UICollectionView+extensions.swift in Sources */,
 				6B36D1B623144B2900230D74 /* UIViewController+extensions.swift in Sources */,
 				6BA1517323128EB200F3B6AA /* PictureCollection.swift in Sources */,
-				6BB3D507231188D4002167FE /* PixabayItem.swift in Sources */,
+				6BB3D507231188D4002167FE /* PixabayImageItem.swift in Sources */,
 				6BA1514723119F2E00F3B6AA /* NetworkTask.swift in Sources */,
 				6BEE606D2315BC96000C61ED /* CollectionCell.swift in Sources */,
 				6BB43F7523114217006F84CE /* AppDelegate.swift in Sources */,

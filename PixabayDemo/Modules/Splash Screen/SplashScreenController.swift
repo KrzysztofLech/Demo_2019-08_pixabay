@@ -18,7 +18,6 @@ final class SplashScreenController {
         static let topViewedPhotosNumber: Int = 2
     }
     
-    var collections: [PictureCollection] = []
     weak var delegate: ProgressViewDelegate?
     
     private let serviceWorker: PixabayServiceWorkerProtocol
@@ -49,62 +48,34 @@ final class SplashScreenController {
     // MARK: - Fetching methods
 
     func fetchData(completion: @escaping (NetworkError?)->()) {
+        DataManager.shared.deleteAll()
+    
         let dispatchGroup = DispatchGroup()
 
         categories.forEach { [weak self] category in
             dispatchGroup.enter()
 
             serviceWorker.getTopPopularPicturesFrom(category: category) { response in
-                DispatchQueue.main.async {
-                    switch response {
-                    case .success(let data):
-                        self?.createCollection(withData: data.items, andCategory: category)
-                        
-                    case .failure(let error):
-                        completion(error)
-                    }
+                switch response {
+                case .success(let data):
+                    self?.createCollection(withData: data.items, andCategory: category)
                     
-                    dispatchGroup.leave()
+                case .failure(let error): completion(error)
                 }
+                
+                dispatchGroup.leave()
             }
         }
 
         dispatchGroup.notify(queue: .main) { completion(nil) }
     }
-    
-    func fetchDataFromFiles(completion: @escaping (NetworkError?)->()) {
-        categories.forEach { [weak self] category in
-            guard let items = self?.serializeJsonCollection(category.rawValue) else { return }
-            self?.createCollection(withData: items, andCategory: category)
-        }
-        completion(nil)
-    }
-    
-    private func serializeJsonCollection(_ name: String) -> [PixabayImageItem]? {
-        let path = Bundle.main.path(forResource: name, ofType: "json")
-        let url = URL(fileURLWithPath: path!)
-        let jsonDecoder = JSONDecoder()
-        do {
-            let data = try Data(contentsOf: url)
-            do {
-                let items = try jsonDecoder.decode([PixabayImageItem].self, from: data)
-                return items
-            } catch {
-                print("! - failed to convert data")
-            }
-        } catch let error {
-            print(error)
-        }
-        return nil
-    }
-    
+        
     private func createCollection(withData data: [PixabayImageItem], andCategory category: ApiParameters.Category) {
         let tenMostViewedPictures = findMostViewedPictures(items: data)
         let collection = PictureCollection(name: category.rawValue.capitalized,
                                            items: tenMostViewedPictures)
-        collections.append(collection)
-        
-        DataManager.shared.updateDataBase(withObjects: tenMostViewedPictures)
+        DataManager.shared.addObject(object: collection)
+                
         print(collection.name, collection.items.count)   //// to remove
     }
     
@@ -112,32 +83,37 @@ final class SplashScreenController {
         let sortedArray = items.sorted { $0.views > $1.views }
         return Array(sortedArray.prefix(Constants.topViewedPhotosNumber))
     }
-
+    
+    
+    
+    
     // MARK: - Images downloading methods
     
     func downloadCollectionImages(completion: @escaping (NetworkError?)->()) {
-        let allItems = collections.flatMap { $0.items }
+        let allItems = DataManager.shared.fetchAllImageItems()
         
-        let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 1
+        print("$$$$$$$: ", allItems.count)
         
-        allItems.forEach { [weak self] item in
-            guard let self = self else { return }
-            
-            let operation = ImageDownloadOperation(url: item.largeImageURL, completionHandler: { image in
-                if let image = image {
-                    ImageCacheService.shared.cache(object: image, forKey: item.id)
-                    self.progress += self.progressStep
-                    print("Finished downloading: ", item.id)
-                } else {
-                    print("!! Problem with downloading: ", item.id)
-                }
-            })
-            queue.addOperation(operation)
-        }
-        
-        queue.addOperation {
-            DispatchQueue.main.async { completion(nil) }
-        }
+//        let queue = OperationQueue()
+//        queue.maxConcurrentOperationCount = 1
+//
+//        allItems.forEach { [weak self] item in
+//            guard let self = self else { return }
+//
+//            let operation = ImageDownloadOperation(url: item.largeImageURL, completionHandler: { image in
+//                if let image = image {
+//                    ImageCacheService.shared.cache(object: image, forKey: item.id)
+//                    self.progress += self.progressStep
+//                    print("Finished downloading: ", item.id)
+//                } else {
+//                    print("!! Problem with downloading: ", item.id)
+//                }
+//            })
+//            queue.addOperation(operation)
+//        }
+//
+//        queue.addOperation {
+//            DispatchQueue.main.async { completion(nil) }
+//        }
     }
 }

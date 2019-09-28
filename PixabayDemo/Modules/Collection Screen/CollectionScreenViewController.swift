@@ -7,17 +7,19 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class CollectionScreenViewController: UIViewController {
     
     @IBOutlet private var collectionView: UICollectionView!
     
-    var collections: [PictureCollection] = []
+    var collections: Results<PictureCollection>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
+        collections = DataManager.shared.fetchCollections()
     }
     
     private func setupCollectionView() {
@@ -27,14 +29,16 @@ final class CollectionScreenViewController: UIViewController {
 
 extension CollectionScreenViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collections.count
+        return collections?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionCell.toString(), for: indexPath) as? CollectionCell else { return UICollectionViewCell() }
-        
-        let title = collections[indexPath.row].name
-        let items = collections[indexPath.row].items
+        guard
+            let collection = collections?[indexPath.item],
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionCell.toString(), for: indexPath) as? CollectionCell else { return UICollectionViewCell() }
+
+        let title = collection.name
+        let items = collection.items
         cell.configure(title: title, items: items)
         
         return cell
