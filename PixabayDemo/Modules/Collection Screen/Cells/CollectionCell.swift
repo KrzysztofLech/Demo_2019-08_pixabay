@@ -79,3 +79,36 @@ extension CollectionCell: UICollectionViewDelegateFlowLayout {
         return .init(top: 0, left: Constants.padding, bottom: 0, right: Constants.padding)
     }
 }
+
+extension CollectionCell: UIScrollViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        guard !decelerate else { return }
+        scrollToNearestVisibleCollectionViewCell()
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollToNearestVisibleCollectionViewCell()
+    }
+    
+    private func scrollToNearestVisibleCollectionViewCell() {
+        collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
+        
+        let visibleCenterPositionOfScrollView = Float(collectionView.contentOffset.x + (collectionView.bounds.size.width / 2))
+        var closestCellIndex: IndexPath?
+        var closestDistance: Float = .greatestFiniteMagnitude
+        
+        collectionView.visibleCells.forEach {
+            let cellWidth = $0.bounds.size.width
+            let cellCenter = Float($0.frame.origin.x + cellWidth / 2)
+            
+            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
+            if distance < closestDistance {
+                closestDistance = distance
+                closestCellIndex = collectionView.indexPath(for: $0)
+            }
+        }
+        
+        guard let indexItem = closestCellIndex?.item else { return }
+        collectionView.scrollToItem(at: IndexPath(item: indexItem, section: 0), at: .centeredHorizontally, animated: true)
+    }
+}
