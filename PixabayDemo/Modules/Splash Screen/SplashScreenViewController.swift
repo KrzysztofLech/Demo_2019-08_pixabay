@@ -14,8 +14,14 @@ final class SplashScreenViewController: BaseViewController {
         static let collectionScreenIdentifier = "CollectionScreen"
     }
     
-    @IBOutlet private var downloadingProgressView: DownloadingProgressView!
-    
+    @IBOutlet private var progressView: DownloadingProgressView!
+        
+    var progressValue: Float = 0.0 {
+        didSet {
+            progressView.progressValue = progressValue
+        }
+    }
+
     private let controller = SplashScreenController()
 
     // MARK: - Lifecycle methods
@@ -23,21 +29,20 @@ final class SplashScreenViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        controller.delegate = downloadingProgressView
+        controller.delegate = self
+        progressView.startAnimation()
         fetchData()
     }
     
     // MARK: - Fetching methods
     
     private func fetchData() {
-        showLoader()
         controller.fetchData { [weak self] error in
             if let errorMessage = error?.message {
                 DispatchQueue.main.async { self?.showLoaderError(withMessage: errorMessage) }
             } else {
                 print("Data downloaded!")       ///
                 self?.downloadImages()
-                //self?.showCollectionScreen()
             }
         }
     }
@@ -50,7 +55,6 @@ final class SplashScreenViewController: BaseViewController {
                 DispatchQueue.main.async { self?.showLoaderError(withMessage: errorMessage) }
             } else {
                 print("Images downloaded!")     ///
-                self?.hideLoader()
                 self?.showCollectionScreen()
             }
         }
@@ -68,5 +72,11 @@ final class SplashScreenViewController: BaseViewController {
         
         viewController.collections = controller.collections
         present(navigationController, animated: true)
+    }
+}
+
+extension SplashScreenViewController: ProgressViewDelegate {
+    func progressChanged(currentProgress: Float) {
+        DispatchQueue.main.async { self.progressValue = currentProgress }
     }
 }

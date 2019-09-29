@@ -9,19 +9,7 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    
-    func showLoader() {
-        DispatchQueue.main.async {
-            self.view.backgroundColor = .blue
-        }
-    }
-    
-    func hideLoader() {
-        DispatchQueue.main.async {
-            self.view.backgroundColor = .white
-        }
-    }
-    
+        
     func showLoaderError(withMessage message: String) {
         view.backgroundColor = .red
         showAlert(withMessage: message)
@@ -29,9 +17,7 @@ class BaseViewController: UIViewController {
     
     private func showAlert(withMessage message: String) {
         let alerController = UIAlertController(title: "Networking problem!", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
-            self?.hideLoader()
-        }
+        let okAction = UIAlertAction(title: "OK", style: .default)
         alerController.addAction(okAction)
         present(alerController, animated: true)
     }

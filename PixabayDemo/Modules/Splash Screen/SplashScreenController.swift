@@ -27,16 +27,14 @@ final class SplashScreenController {
     ]
     
     private lazy var progressStep: Float = {
-        let steps = Float(categories.count * Constants.topViewedPhotosNumber)
+        let steps = Float(categories.count + categories.count * Constants.topViewedPhotosNumber)
         guard steps != 0 else { return 0 }
         return 1 / steps
     }()
     
     private var progress: Float = 0 {
         didSet {
-            DispatchQueue.main.async {
-                self.delegate?.progressChanged(currentProgress: self.progress)
-            }
+            delegate?.progressChanged(currentProgress: progress)
         }
     }
     
@@ -55,9 +53,11 @@ final class SplashScreenController {
             dispatchGroup.enter()
 
             serviceWorker.getTopPopularPicturesFrom(category: category) { response in
+                guard let self = self else { return }
                 switch response {
                 case .success(let data):
-                    self?.createCollection(withData: data.items, andCategory: category)
+                    self.createCollection(withData: data.items, andCategory: category)
+                    self.progress += self.progressStep
                     
                 case .failure(let error): completion(error)
                 }

@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashScreenViewController" customModule="PixabayDemo" customModuleProvider="target">
             <connections>
-                <outlet property="downloadingProgressView" destination="1dx-mI-mvh" id="IDl-x3-D7Y"/>
+                <outlet property="progressView" destination="ov6-bf-Re2" id="kyk-sO-29h"/>
                 <outlet property="view" destination="iN0-l3-epB" id="HZt-ih-fhl"/>
             </connections>
         </placeholder>
@@ -19,33 +19,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dx-mI-mvh" customClass="DownloadingProgressView" customModule="PixabayDemo" customModuleProvider="target">
-                    <rect key="frame" x="16" y="730" width="382" height="6"/>
-                    <subviews>
-                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wDg-mJ-x8D">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="6"/>
-                            <color key="progressTintColor" red="0.99888390299999996" green="0.0022462564159999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </progressView>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ov6-bf-Re2" customClass="DownloadingProgressView" customModule="PixabayDemo" customModuleProvider="target">
+                    <rect key="frame" x="157" y="398" width="100" height="100"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="wDg-mJ-x8D" firstAttribute="top" secondItem="1dx-mI-mvh" secondAttribute="top" id="JAn-uH-hjE"/>
-                        <constraint firstAttribute="bottom" secondItem="wDg-mJ-x8D" secondAttribute="bottom" id="eJA-AX-cmy"/>
-                        <constraint firstAttribute="height" constant="6" id="ngP-l7-HTi"/>
-                        <constraint firstItem="wDg-mJ-x8D" firstAttribute="leading" secondItem="1dx-mI-mvh" secondAttribute="leading" id="tdR-1C-Kze"/>
-                        <constraint firstAttribute="trailing" secondItem="wDg-mJ-x8D" secondAttribute="trailing" id="xbA-vn-OvN"/>
+                        <constraint firstAttribute="width" secondItem="ov6-bf-Re2" secondAttribute="height" id="9Vb-1F-kzJ"/>
+                        <constraint firstAttribute="width" constant="100" id="CA4-zl-iMM"/>
                     </constraints>
-                    <connections>
-                        <outlet property="progressView" destination="wDg-mJ-x8D" id="Epv-Hn-4qj"/>
-                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="1dx-mI-mvh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="VDn-IV-a8Z"/>
-                <constraint firstAttribute="trailing" secondItem="1dx-mI-mvh" secondAttribute="trailing" constant="16" id="ee7-yH-3ab"/>
-                <constraint firstAttribute="bottom" secondItem="1dx-mI-mvh" secondAttribute="bottom" constant="160" id="zBU-qH-WPq"/>
+                <constraint firstItem="ov6-bf-Re2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IWj-OY-orn"/>
+                <constraint firstItem="ov6-bf-Re2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pwd-Bo-3QT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="139" y="154"/>
