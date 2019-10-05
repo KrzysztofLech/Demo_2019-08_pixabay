@@ -17,6 +17,8 @@
 		6B36D1B823144B4A00230D74 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1B723144B4A00230D74 /* UIView+extensions.swift */; };
 		6B36D1BE2314726B00230D74 /* BigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D1BC2314726B00230D74 /* BigCell.swift */; };
 		6B36D1BF2314726B00230D74 /* BigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B36D1BD2314726B00230D74 /* BigCell.xib */; };
+		6B5E146323489A0F00276CDF /* DownloadingManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E146223489A0F00276CDF /* DownloadingManagerView.swift */; };
+		6B5E14662348C71200276CDF /* DownloadingStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E14652348C71200276CDF /* DownloadingStage.swift */; };
 		6B8E2B80233A86990088FF90 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8E2B7F233A86990088FF90 /* SplashScreenViewController.xib */; };
 		6B971036231835B80088E45C /* UICollectionView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B971035231835B80088E45C /* UICollectionView+extensions.swift */; };
 		6BA1514523119F2E00F3B6AA /* HeaderKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1512823119F2E00F3B6AA /* HeaderKey.swift */; };
@@ -62,6 +64,8 @@
 		6B36D1B723144B4A00230D74 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		6B36D1BC2314726B00230D74 /* BigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCell.swift; sourceTree = "<group>"; };
 		6B36D1BD2314726B00230D74 /* BigCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigCell.xib; sourceTree = "<group>"; };
+		6B5E146223489A0F00276CDF /* DownloadingManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadingManagerView.swift; sourceTree = "<group>"; };
+		6B5E14652348C71200276CDF /* DownloadingStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadingStage.swift; sourceTree = "<group>"; };
 		6B8E2B7F233A86990088FF90 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
 		6B971035231835B80088E45C /* UICollectionView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extensions.swift"; sourceTree = "<group>"; };
 		6BA1512823119F2E00F3B6AA /* HeaderKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderKey.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				6B36D1AF231431C200230D74 /* DownloadingProgressView.swift */,
+				6B5E146223489A0F00276CDF /* DownloadingManagerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,9 +187,18 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		6B5E14642348C6F400276CDF /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				6B5E14652348C71200276CDF /* DownloadingStage.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		6BA1512323119D8900F3B6AA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6B5E14642348C6F400276CDF /* Enums */,
 				6B2DF557231C0F25004D18CF /* Operations */,
 				6B36D1AE2314319C00230D74 /* Views */,
 				6B36D1B923144B7900230D74 /* Extensions */,
@@ -459,6 +473,7 @@
 				6BA1515423119F2E00F3B6AA /* URLSessionProtocol.swift in Sources */,
 				6BA1514C23119F2E00F3B6AA /* DataExtension.swift in Sources */,
 				6BA1515323119F2E00F3B6AA /* ServiceProtocol.swift in Sources */,
+				6B5E146323489A0F00276CDF /* DownloadingManagerView.swift in Sources */,
 				6BA151622311C17A00F3B6AA /* BaseViewController.swift in Sources */,
 				6BA1514A23119F2E00F3B6AA /* URLSessionProvider.swift in Sources */,
 				6BA1515E2311B95A00F3B6AA /* PixabayServiceWorker.swift in Sources */,
@@ -473,6 +488,7 @@
 				6BA1514D23119F2E00F3B6AA /* URLRequestExtension.swift in Sources */,
 				6BB3D50923118932002167FE /* PixabaySearchResult.swift in Sources */,
 				6B36D1BE2314726B00230D74 /* BigCell.swift in Sources */,
+				6B5E14662348C71200276CDF /* DownloadingStage.swift in Sources */,
 				6BA1514923119F2E00F3B6AA /* NetworkError.swift in Sources */,
 				6BA1514623119F2E00F3B6AA /* ParametersEncoding.swift in Sources */,
 				6BA1514523119F2E00F3B6AA /* HeaderKey.swift in Sources */,

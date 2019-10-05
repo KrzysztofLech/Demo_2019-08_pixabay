@@ -12,16 +12,11 @@ final class SplashScreenViewController: BaseViewController {
     
     private enum Constants {
         static let collectionScreenIdentifier = "CollectionScreen"
+        static let delayBeforePreseningCollections = 1.0
     }
     
-    @IBOutlet private var progressView: DownloadingProgressView!
-        
-    var progressValue: Float = 0.0 {
-        didSet {
-            progressView.progressValue = progressValue
-        }
-    }
-
+    @IBOutlet private var progressView: DownloadingManagerView!
+    
     private let controller = SplashScreenController()
 
     // MARK: - Lifecycle methods
@@ -37,11 +32,11 @@ final class SplashScreenViewController: BaseViewController {
     // MARK: - Fetching methods
     
     private func fetchData() {
+        progressView.changeStage(.downloadingData)
         controller.fetchData { [weak self] error in
             if let errorMessage = error?.message {
                 DispatchQueue.main.async { self?.showLoaderError(withMessage: errorMessage) }
             } else {
-                print("Data downloaded!")       ///
                 self?.downloadImages()
             }
         }
@@ -49,14 +44,21 @@ final class SplashScreenViewController: BaseViewController {
 
     // MARK: - Images downloading methods
 
-    private func downloadImages() {        
+    private func downloadImages() {
+        progressView.changeStage(.downloadingImages)
         controller.downloadCollectionImages { [weak self] error in
             if let errorMessage = error?.message {
                 DispatchQueue.main.async { self?.showLoaderError(withMessage: errorMessage) }
             } else {
-                print("Images downloaded!")     ///
-                self?.showCollectionScreen()
+                self?.showFinishMessageAndPresentCollectionController()
             }
+        }
+    }
+    
+    private func showFinishMessageAndPresentCollectionController() {
+        progressView.changeStage(.done)
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.delayBeforePreseningCollections) { [weak self] in
+            self?.showCollectionScreen()
         }
     }
     
@@ -75,8 +77,12 @@ final class SplashScreenViewController: BaseViewController {
     }
 }
 
+// MARK: - ProgressViewDelegate method
+
 extension SplashScreenViewController: ProgressViewDelegate {
-    func progressChanged(currentProgress: Float) {
-        DispatchQueue.main.async { self.progressValue = currentProgress }
+    func progressChanged(currentProgress: Float, downloadedImage: UIImage?) {
+        DispatchQueue.main.async {
+            self.progressView.changeProgressValue(currentProgress, image: downloadedImage)
+        }
     }
 }

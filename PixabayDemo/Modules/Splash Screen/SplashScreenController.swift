@@ -9,13 +9,13 @@
 import UIKit
 
 protocol ProgressViewDelegate: AnyObject {
-    func progressChanged(currentProgress: Float)
+    func progressChanged(currentProgress: Float, downloadedImage: UIImage?)
 }
 
 final class SplashScreenController {
     
     private enum Constants {
-        static let topViewedPhotosNumber: Int = 3
+        static let topViewedPhotosNumber: Int = 5
     }
     
     var collections: [PictureCollection] = []
@@ -25,6 +25,7 @@ final class SplashScreenController {
     private let categories: [ApiParameters.Category] = [
         .greece, .girl, .city
     ]
+    private var downloadedImage: UIImage?
     
     private lazy var progressStep: Float = {
         let steps = Float(categories.count + categories.count * Constants.topViewedPhotosNumber)
@@ -34,7 +35,7 @@ final class SplashScreenController {
     
     private var progress: Float = 0 {
         didSet {
-            delegate?.progressChanged(currentProgress: progress)
+            delegate?.progressChanged(currentProgress: progress, downloadedImage: downloadedImage)
         }
     }
     
@@ -100,6 +101,7 @@ final class SplashScreenController {
             let operation = ImageDownloadOperation(url: item.largeImageURL, completionHandler: { image in
                 if let image = image {
                     ImageCacheService.shared.cache(object: image, forKey: item.id)
+                    self.downloadedImage = image
                     self.progress += self.progressStep
                     print("Finished downloading: ", item.id)
                 } else {
